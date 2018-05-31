@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2018-05-31 15:20:38 +0300
@@ -23,3 +23,6 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
+https://jekyllrb.com/docs/quickstart/
+https://help.github.com/articles/about-github-pages-and-jekyll/
