@@ -7,4 +7,6 @@ categories: rest api doc aglio
 
 If you're looking for a clean and simple REST API documentation solution you can use [aglio npm library](https://github.com/danielgtaylor/aglio). The tool generates a static html file from an [api blueprint](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md) markdown file.
 
-I added a simplified starting point example on [Github](https://github.com/xdanradu/rest-api-docs) that also includes the file/directory structuring required for complex api's.
+I added a simplified starting point example on [Github](https://github.com/xdanradu/rest-api-docs) that also includes the file/directory structuring required for complex api's. The static html looks like [this](/examples/rest-api-docs.html).
+
+Other good options for docs are: swagger, apiary, readme.io, gelato
