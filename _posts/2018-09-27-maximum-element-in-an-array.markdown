@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Find the maximum element in an array"
-date:   2018-06-05 15:00:00 +0300
+date:   2018-09-27 15:00:00 +0300
 categories: algorithms
 ---
 
