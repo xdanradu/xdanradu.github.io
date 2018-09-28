@@ -7,16 +7,6 @@ categories: simple algorithms
 
 ```javascript
 
-function getMax(a){
-	var max=Number.MIN_SAFE_INTEGER;
-	for (var i=0;i<a.length;i++){
-		if(max<a[i]) {
-			max=a[i];
-		}	
-	}
-	return max;
-}
-
 function getMin(a){
 	var min=Number.MAX_SAFE_INTEGER;
 	for (var i=0;i<a.length;i++){
@@ -27,7 +17,17 @@ function getMin(a){
 	return min;
 }
 
+function getMax(a){
+	var max=Number.MIN_SAFE_INTEGER;
+	for (var i=0;i<a.length;i++){
+		if(max<a[i]) {
+			max=a[i];
+		}	
+	}
+	return max;
+}
+
 console.log(getMax([-5, 4, 9, 20, 2]));//prints 20
-console.log(getMax([-5, 4, 9, 20, 2]));//prints -5
+console.log(getMin([-5, 4, 9, 20, 2]));//prints -5
 
 ```
