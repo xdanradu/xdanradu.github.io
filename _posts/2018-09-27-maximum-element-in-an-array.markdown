@@ -10,7 +10,7 @@ categories: simple algorithms
 function getMin(a){
 	var min=Number.MAX_SAFE_INTEGER;
 	for (var i=0;i<a.length;i++){
-		if(min<a[i]) {
+		if(min>a[i]) {
 			min=a[i];
 		}	
 	}
