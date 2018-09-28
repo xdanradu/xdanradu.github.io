@@ -25,6 +25,7 @@ github_username:  xdanradu
 # Build settings
 markdown: kramdown
 theme: minima
+
 plugins:
   - jekyll-feed
 
@@ -39,3 +40,9 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
