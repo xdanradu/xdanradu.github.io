@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Minimum and maximum of an array"
+title:  "Array minimum and maximum"
 date:   2018-09-27 15:00:00 +0300
-categories: algorithms
+categories: simple algorithms
 ---
 
 ```javascript
