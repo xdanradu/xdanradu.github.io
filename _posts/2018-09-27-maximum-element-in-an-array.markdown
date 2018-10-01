@@ -17,6 +17,8 @@ function getMin(a){
 	return min;
 }
 
+console.log(getMin([-5, 4, 9, 20, 2]));//prints -5
+
 function getMax(a){
 	var max=Number.MIN_SAFE_INTEGER;
 	for (var i=0;i<a.length;i++){
@@ -26,8 +28,6 @@ function getMax(a){
 	}
 	return max;
 }
-
 console.log(getMax([-5, 4, 9, 20, 2]));//prints 20
-console.log(getMin([-5, 4, 9, 20, 2]));//prints -5
 
 ```
