@@ -5,23 +5,6 @@ date:   2018-10-08 15:00:00 +0300
 categories: javascript
 ---
 
-```javascript
-/* script.js */
-var counter = 0;
-$("#counter").text(counter);
-
-function inc(){
-  counter++;
-  $("#counter").text(counter);
-}
-
-function dec(){
-  counter--;
-  $("#counter").text(counter);
-}
-
-```
-
 ```html
 <!-- index.html -->
 <html>
@@ -45,6 +28,22 @@ function dec(){
 </html>
 ```
 
+```javascript
+/* script.js */
+var counter = 0;
+$("#counter").text(counter);
+
+function inc(){
+  counter++;
+  $("#counter").text(counter);
+}
+
+function dec(){
+  counter--;
+  $("#counter").text(counter);
+}
+
+```
 
 __Requirements__:
  1. Refactoring: remove the duplicated code (better extensibility and maintainability)
