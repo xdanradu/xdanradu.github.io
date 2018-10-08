@@ -45,11 +45,12 @@ function dec(){
 </html>
 ```
 
-_Requirements_:
- 1. Refactoring: remove the duplicate code (better extensibility and maintainability)
- 2. Restrict the counter to the range [ -50, 50 ]
+
+__Requirements__:
+ 1. Refactoring: remove the duplicated code (better extensibility and maintainability)
+ 2. Restrict the counter to [ -50, 50 ] range
  3. Implement a basic calculator that contains
   - input fields for two numbers
-  - dropdown select for the operations [+, -, /, \*, %]
+  - dropdown select for [+, -, /, \*, %] operations
   - button for the equals function
-  - span that displays the computed result
+  - display the computed result in a span
