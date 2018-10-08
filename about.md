@@ -13,4 +13,4 @@ __PhD__  >> "Efficient Communication Strategies for Ad-Hoc Networks"
 
 __Languages__ >> JavaScript, French, Java, English, C#, Android, PHP, SQL, MySQL...
 
-__Hobbies__ >> education, software, sports, music/guitar, mountains/climbing
+__Hobbies__ >> Education, software, sports, music/guitar, mountains/climbing
