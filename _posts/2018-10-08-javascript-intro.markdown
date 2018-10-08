@@ -20,6 +20,8 @@ function dec(){
   $("#counter").text(counter);
 }
 
+```
+
 ```html
 <html>
 
