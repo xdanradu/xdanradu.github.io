@@ -6,7 +6,7 @@ categories: javascript
 ---
 
 ```javascript
-
+/* script.js */
 var counter = 0;
 $("#counter").text(counter);
 
@@ -23,6 +23,7 @@ function dec(){
 ```
 
 ```html
+<!-- index.html -->
 <html>
 
 <head>
@@ -44,22 +45,7 @@ function dec(){
 </html>
 ```
 
-var counter = 0;
-$("#counter").text(counter);
-
-function inc(){
-  counter++;
-  $("#counter").text(counter);
-}
-
-function dec(){
-  counter--;
-  $("#counter").text(counter);
-}
-
-```
-
-#Requirements:
+_Requirements_:
  1. Refactoring: remove the duplicate code (better extensibility and maintainability)
  2. Restrict the counter to the range [ -50, 50 ]
  3. Implement a basic calculator that contains
