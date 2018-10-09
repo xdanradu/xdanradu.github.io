@@ -108,7 +108,7 @@ function dec(){
 }
 
 function setCounter(a){
-  if (a > MIN_COUNTER && a < MAX_COUNTER) counter=a;
+  if (a > MIN_COUNTER && a < MAX_COUNTER) counter = a;
 }
 
 ```
