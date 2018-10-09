@@ -37,7 +37,7 @@ We have two functions (inc and dec) that will be triggered when the user presses
 If you have to change the way you display the counter value, for example simply change the id of the HTML element or maybe you will also want to save it to a text file/database,
 you will have to change it in every place this line of code was used (this could be in numerous files).
 
-__In this case you should extract the duplicated code in a single function and call it from any place in your project.__ In this way, when you have to change the display function in the future you will manage it only in one place/file.
+In this case you should __extract the duplicated code in a single function and call it from any place in your project.__ In this way, when you have to change the display function in the future you will manage it only in one place/file.
 This means that your software will be more stable since the probability to introduce coding bugs will be diminished. Also, the effort to change the code in numerous places will not be necessary anymore.
 
 For simplicity's sake the example above contains only one line of code that refreshes the counter value on the UI. But in a more complex application this could be a bit more complicated.
