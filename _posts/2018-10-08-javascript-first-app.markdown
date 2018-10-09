@@ -46,10 +46,13 @@ function dec(){
 ```
 
 __Requirements__:
- 1. Refactoring (improve the legacy code above) - remove the duplicated code for better extensibility and maintainability. _Hint: the HTML counter value should be managed/printed in one place only._
- 2. Restrict the counter to [ 0, 2 ] range.
- 3. Implement a basic calculator that allows the computation of [+, -, /, \*, %] operations between two numerical values.
+ 1. Restrict the counter to [ 0, 2 ] range.
+ 2. Implement a basic calculator that allows the computation of [+, -, /, \*, %] operations between two numerical values.
   - input fields for the numbers
   - dropdown select for the operations
   - button for the equals function
   - display the computed result in a span element
+ 3. Refactoring (improve the legacy code above)
+  - remove the duplicated code for better extensibility and maintainability. _Hint: the HTML counter value should be managed/printed in one place only._
+  - no magic numbers
+  - all variables/objects must have a specific/well defined name
