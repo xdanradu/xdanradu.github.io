@@ -147,7 +147,7 @@ function getTotalCostFor(articles){
   var articleDiscountRate = 0.15;
 
   for (var i = 0; i < articles.length; i++) {
-    var articlehippingCost = articles[i].weight * shippingTaxesRate;
+    var articleShippingCost = articles[i].weight * shippingTaxesRate;
     var articlePrice = articles[i].price * articleDiscountRate;
     var articleFinalCost = articleShippingCost + articlePrice;;
     totalCost += articleFinalCost;
