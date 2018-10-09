@@ -148,9 +148,9 @@ function getTotalCostFor(articles){
   var fixedShippingCost = 3;
 
   for (var i = 0; i < articles.length; i++) {
-    var articleShippingCost = articles[i].weight * shippingTaxRate + fixedShippingCost;
     var articlePrice = articles[i].price * articleDiscountRate;
-    var articleFinalCost = articleShippingCost + articlePrice;
+    var shippingCost = articles[i].weight * shippingTaxRate + fixedShippingCost;
+    var articleFinalCost = articlePrice + shippingCost;
     totalCost += articleFinalCost;
   }
 
