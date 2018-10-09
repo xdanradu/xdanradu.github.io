@@ -46,8 +46,8 @@ function dec(){
 ```
 
 __Requirements__:
- 1. Refactoring (improve the legacy code above) - remove the duplicated code for better extensibility and maintainability. _Hint: the counter value should be displayed in one place only._
- 2. Restrict the counter to [ -50, 50 ] range.
+ 1. Refactoring (improve the legacy code above) - remove the duplicated code for better extensibility and maintainability. _Hint: the HTML counter value should be managed/printed in one place only._
+ 2. Restrict the counter to [ 0, 2 ] range.
  3. Implement a basic calculator that allows the computation of [+, -, /, \*, %] operations between two numerical values.
   - input fields for the numbers
   - dropdown select for the operations
