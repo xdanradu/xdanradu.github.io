@@ -9,7 +9,7 @@ permalink: /about/
 
 ___Dan Radu___
 
-__PhD__  >> "Efficient Communication Strategies for Ad-Hoc Networks"
+__PhD__  >> "Efficient Communication Strategies for Mobile Ad-Hoc Networks"
 
 __Languages__ >> JavaScript, French, Java, English, C#, Android, PHP, SQL, MySQL, ...
 
