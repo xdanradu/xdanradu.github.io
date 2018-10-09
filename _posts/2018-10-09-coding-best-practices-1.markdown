@@ -5,7 +5,7 @@ date:   2018-10-09 15:00:00 +0300
 categories: javascript
 ---
 
-Code refactoring means __improving the quality of existing code__. In this post I will share with you 3 really simple steps that will help you
+Code refactoring means __improving the quality of existing code__. In this post I will share 3 really simple steps that will help you
 improve the readability, extensibility and maintainability of your code:
 
 1. [Remove code duplication](#1-remove-code-duplication)
