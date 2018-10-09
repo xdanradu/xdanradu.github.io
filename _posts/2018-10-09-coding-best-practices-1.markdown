@@ -135,7 +135,7 @@ function get_ct(sc, p){
 Always __take the time to give your variables and functions proper names__ even if it takes a bit of effort. This will pay off hugely in the long run.
 
 Your __code should be readable and clearly state it's purpose__. This will definitely save you a lot of time and effort spent on surfing over the project
-trying to figure out what the previous programmer tried to say when he/she implemented it in the first place.
+trying to figure out what the previous programmer thaught when he/she implemented it in the first place.
 
 The previous snippet should look something more like this:
 
