@@ -125,7 +125,7 @@ When you have to change something in legacy code you never want to step over som
 function get_ct(sc, p){
   var s = 0;
   for (int i = 0; i < 10; i++) {
-        s+= (sc[i] * 0.12) + p[i] * 0.15;
+        s+= (sc[i] * 0.12 + 3) + p[i] * 0.15;
   }
   return s;
 }
@@ -143,13 +143,14 @@ The previous snippet should look something more like this:
 function getTotalCostFor(articles){
   var totalCost = 0;
 
-  var shippingTaxesRate = 0.12;
+  var shippingTaxRate = 0.12;
   var articleDiscountRate = 0.15;
+  var fixedShippingCost = 3;
 
   for (var i = 0; i < articles.length; i++) {
-    var articleShippingCost = articles[i].weight * shippingTaxesRate;
+    var articleShippingCost = articles[i].weight * shippingTaxRate + fixedShippingCost;
     var articlePrice = articles[i].price * articleDiscountRate;
-    var articleFinalCost = articleShippingCost + articlePrice;;
+    var articleFinalCost = articleShippingCost + articlePrice;
     totalCost += articleFinalCost;
   }
 
