@@ -10,7 +10,7 @@ improve the readability, extensibility and maintainability of your code:
 
 1. [Remove code duplication](#1-remove-code-duplication)
 2. [Avoid magic numbers](#2-avoid-magic-numbers)
-3. [Invest time in naming your variables and functions](#3-invest-time-in-naming-your-variables-and-functions)
+3. [Invest time in the naming of your variables and functions](#3-invest-time-in-the-naming-of-your-variables-and-functions)
 
 # 1. Remove code duplication
 
@@ -117,7 +117,7 @@ The advantage is already noticeable even in this really simple example. When I w
 
 Think about the benefits of constants instead of magic numbers when you use this values in tens of places all over your project.
 
-# 3. Invest time in naming your variables and functions
+# 3. Invest time in the naming of your variables and functions
 
 When you have to change something in legacy code you never want to step over something like this:
 
