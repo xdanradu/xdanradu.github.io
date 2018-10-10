@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Javascript first app"
+title:  "JavaScript first steps"
 date:   2018-10-08 15:00:00 +0300
 categories: javascript
 ---
