@@ -75,7 +75,7 @@ __TO DO's__:
  1. Change the given code:
   - Restrict the counter to the [ 0, 2 ] range.<br>
   - Use an __\<input type="range"\>__ element instead of __\<span\>__ to display the counter graphically.
-<br>
+<br><br>
 
  2. Implement a basic calculator that allows the computation of [+, -, /, \*, %] operations between two numerical values. For this we need:
   - Input fields for the numbers
