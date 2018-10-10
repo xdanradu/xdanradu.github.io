@@ -14,7 +14,7 @@ Let's take the following example:
 ```java
 public class BankingSystem {
 
-  public String getInfo(String userName, String userAddress, String accountIBAN, String accountBalance) {
+  public String getInfo(String userName, String userAddress, String accountIBAN, int accountBalance) {
     return "Name: "+name+" Address: "+address+" Account balance:"+accountBalance;
   }
 
