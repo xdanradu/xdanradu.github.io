@@ -22,12 +22,12 @@ $("#display-area").text(counter);
 
 function inc(){
   counter++;
-  $("#counter").text(counter);
+  $("#display-area").text(counter);
 }
 
 function dec(){
   counter--;
-  $("#counter").text(counter);
+  $("#display-area").text(counter);
 }
 
 ```
