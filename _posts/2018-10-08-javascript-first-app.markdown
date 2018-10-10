@@ -41,7 +41,7 @@ We attached the JavaScript event handlers (inc/dec functions) to the buttons by 
 
 The counter value is displayed in a __\<span\>__ element. Some alternatives for displaying text values are: __\<p\>__, __\<h1\>__, __\<div\>__.
 
-Also in the HTML file I included jQuery that helps us easily link a JavaScript object to the graphical element in HTML. After that we can control the UI object from JavaScript (ex: change the text, size, color, position).
+Also in the HTML file I included jQuery library that helps us easily link a JavaScript object to the graphical element in HTML. After that we can control the UI object from JavaScript (ex: change the text, size, color, position).
 
 ```javascript
 /* script.js */
