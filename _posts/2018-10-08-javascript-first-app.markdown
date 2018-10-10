@@ -72,12 +72,12 @@ function dec(){
 [Source code for the example](https://github.com/xdanradu/SourceCode/tree/master/js-first-app)
 
 __TO DO's__:
- 1.
+ 1. Change the given code:
   - Restrict the counter to the [ 0, 2 ] range.<br>
   - Use an __\<input type="range"\>__ element instead of __\<span\>__ to display the counter graphically.
 <br>
 
- 3. Implement a basic calculator that allows the computation of [+, -, /, \*, %] operations between two numerical values. For this we need:
+ 2. Implement a basic calculator that allows the computation of [+, -, /, \*, %] operations between two numerical values. For this we need:
   - Input fields for the numbers
   - Dropdown select for the operations
   - Button for the equals function
@@ -85,12 +85,12 @@ __TO DO's__:
 <br>_Example:_ <input value="1"/><select><option>+</option><option>-</option></select><input value="2"><button>=</button>3
 <br><br>
 
-4. Refactor your code for the previous example (_Hint: [Coding Best Practices](http://danradu.ro/coding/best/practices/2018/10/09/coding-best-practices-1.html)_)
+3. Refactor your code for the previous example (_Hint: [Coding Best Practices](http://danradu.ro/coding/best/practices/2018/10/09/coding-best-practices-1.html)_)
  - Remove the duplicated code for better extensibility and maintainability.
  - No magic numbers
  - All variables/objects must have specific/well defined names
 <br><br>
-5. Extend the calculator from point 3. Requirements:
+4. Extend the calculator from point 3. Requirements:
 - The input expression computation algorithm should be implemented in a testable function called __getResult(expression)__ This function can be called from any place in your application and could call multiple functions if necessary.
 - The result of the __getResult(expression)__ function is tested using at least 10 different input expressions.
 Test example: _console.log(compute("5+20*9-17/2") == 176.5 ? "Passed":"Failed");_
