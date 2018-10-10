@@ -2,7 +2,7 @@
 layout: post
 title:  "Coding best practices 1"
 date:   2018-10-09 15:00:00 +0300
-categories: javascript
+categories: coding best practices
 ---
 
 Code refactoring means __improving the quality of existing code__. In this post I will share 3 really simple steps that will help you
@@ -75,6 +75,7 @@ If your code contains __hardcoded values__ (known as __magic numbers__) usually 
 bellow:
 
 ```javascript
+var counter = 0;
 
 function inc(){
   if (counter < 10) counter ++;
@@ -93,9 +94,10 @@ function setCounter(a){
 In this example we have two magic numbers (0 and 10) that restrict the counter value to a required range of values. We can __use constants that are declared and initialized only in one place__. This will lead to __better code readability and maintainability__. Since the magic numbers are used in multiple places we can will also target the
 code duplication problem.
 
-Code after refactoring:
+Code after first refactoring:
 
 ```javascript
+var counter = 0;
 var MIN_COUNTER = 0;
 var MAX_COUNTER = 10;
 

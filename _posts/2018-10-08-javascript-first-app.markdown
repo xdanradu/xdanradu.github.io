@@ -56,3 +56,5 @@ __Requirements__:
   - remove the duplicated code for better extensibility and maintainability. _Hint: the HTML counter value should be managed/printed in one place only._
   - no magic numbers
   - all variables/objects must have a specific/well defined name
+
+  [Source code](https://github.com/xdanradu/SourceCode/tree/master/js-first-app)
