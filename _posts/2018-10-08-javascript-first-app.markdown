@@ -72,8 +72,10 @@ function dec(){
 [Source code for the example](https://github.com/xdanradu/SourceCode/tree/master/js-first-app)
 
 __TO DO's__:
- 1. Restrict the counter to the [ 0, 2 ] range.<br>
- 2. Use an __\<input type="range"\>__ element instead of __\<span\>__ to display the counter graphically.
+ 1.
+  - Restrict the counter to the [ 0, 2 ] range.<br>
+  - Use an __\<input type="range"\>__ element instead of __\<span\>__ to display the counter graphically.
+<br>
 
  3. Implement a basic calculator that allows the computation of [+, -, /, \*, %] operations between two numerical values. For this we need:
   - Input fields for the numbers
