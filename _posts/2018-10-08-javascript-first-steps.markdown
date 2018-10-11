@@ -69,11 +69,11 @@ function dec(){
 
 ```
 
-__Usefull tips__
+__Useful tips__
 
-1. For the JS app above you need to create a folder and two files _index.html_ an _script.js_. To run the application just open _index.html_ in any browser. 
+1. For the JS app above you need to create a folder and two files _index.html_ an _script.js_. To run the application just open _index.html_ in any browser.
 
-1. jQuery can give you control over an HTML element by using the $("#id") syntax. The id must be equivalent to the one specified in HTML.
+2. jQuery can give you control over an HTML element by using the $("#id") syntax. The id must be equivalent to the one specified in HTML.
 
 __\<input type="text" id="user"/\>__
 - Read input text value: $("user").text()
@@ -83,9 +83,9 @@ __\<input type="range" id="counter"/\>__
 - Read range/select value: $("counter").val()
 - Set range/select text value: $("counter").text(value)
 
-2. For debugging you can print messages from the JS script to the browser console (F12 > Console) with __console.log("message")__
+3. For debugging you can print messages from the JS script to the browser console (F12 > Console) with __console.log("message")__
 
-3. To convert string values to int you can use __parseInt("number")__ function.
+4. To convert string values to int you can use __parseInt("number")__ function.
 
 
 
