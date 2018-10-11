@@ -76,12 +76,12 @@ __Useful tips__
 - jQuery can give you control over an HTML element by using the shorthand __$("#uniqueId")__ syntax. The id must be equivalent to the one specified in HTML.
 
 __\<input type="text" id="user"/\>__
-- Read input text value: $("user").text() <br>
-- Set input text value: $("user").text("hello")
+    - Read input text value: $("user").text()
+    - Set input text value: $("user").text("hello")
 
 __\<input type="range" id="counter"/\>__
-- Read range/select value: $("counter").val()
-- Set range/select text value: $("counter").text(value)
+    - Read range/select value: $("counter").val()
+    - Set range/select text value: $("counter").text(value)
 
 - For debugging you can print messages from the JS script to the browser console (F12 > Console) with __console.log("message")__
 
