@@ -58,7 +58,7 @@ public class BankingModule {
 
   private ProfitEstimationStrategy strategy;
 
-  public void setStrategy(CompressionStrategy strategy) {
+  public void setStrategy(ProfitEstimationStrategy strategy) {
     this.strategy = strategy;
   }
 
