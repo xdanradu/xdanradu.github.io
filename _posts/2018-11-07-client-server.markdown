@@ -7,6 +7,8 @@ categories: design patterns
 
 <br>![calc](/images/client-server.png){:class="img-responsive"}
 
+[Source code for the example](https://github.com/xdanradu/SourceCode/tree/master/client-server-java)
+
 ```java
 
 public class App {
@@ -193,6 +195,5 @@ public class Client extends Thread{
 		}
 	}
 }
-
 
 ```
