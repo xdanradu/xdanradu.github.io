@@ -5,8 +5,6 @@ date:   2018-11-08 15:00:00 +0300
 categories: two way data binding
 ---
 
-#JavaScript two way data binding
-
 Two way data binding in SPA's (Single Page Applications) means that:
     - if the data model is updated from the JavaScript code the changes will be propagated to the UI
     - if the data model is updated from the UI the changes will get propagated to the JavaScript model
