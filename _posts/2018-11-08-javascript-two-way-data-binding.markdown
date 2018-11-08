@@ -8,9 +8,9 @@ categories: two way data binding
 Two way data binding in SPA's (Single Page Applications) means that:
 
     + If the data model is updated from the JavaScript code the changes will be propagated to the UI
-    
+
     + If the data model is updated from the UI the changes will get propagated to the JavaScript model
 
 <br>![calc](/images/data-binding.png){:class="img-responsive"}
 
-You can find [here](https://github.com/xdanradu/SourceCode/tree/master/data-binding) a simple algoritm that allows us to accomplish this. The logic is similar to AngularJS's dirty checking.
+You can find [here](https://github.com/xdanradu/SourceCode/tree/master/data-binding) a simple algoritm that allows two way data binding for simple input elements using dirty checking (simillar to Angular JS).
