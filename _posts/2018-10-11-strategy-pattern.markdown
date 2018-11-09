@@ -5,9 +5,6 @@ date:   2018-10-11 15:00:00 +0300
 categories: design patterns
 ---
 
-# Strategy pattern
-
-
 <br>![calc](/images/strategy.png){:class="img-responsive"}
 
 Components:
