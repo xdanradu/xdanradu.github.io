@@ -4,6 +4,7 @@ title:  "Bubblesort"
 date:   2018-11-09 15:00:00 +0300
 categories: algorithms
 ---
+
 # Version 1
 
 ```javascript
