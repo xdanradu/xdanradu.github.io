@@ -29,7 +29,7 @@ public interface ProfitEstimationStrategy {
 
 __Strategy concrete implementation 1__
 ```java
-public class SwitzerlandStrategy implements ComputationStrategy {
+public class Switzerland implements ComputationStrategy {
 
   public void compute(ArrayList<Accounts> accounts) {
     // Switzerland algorithm
@@ -40,7 +40,7 @@ public class SwitzerlandStrategy implements ComputationStrategy {
 
 __Strategy concrete implementation 2__
 ```java
-public class JapanStrategy implements ComputationStrategy {
+public class Japan implements ComputationStrategy {
 
   public void compute(ArrayList<Accounts> accounts) {
     // Japan algorithm
