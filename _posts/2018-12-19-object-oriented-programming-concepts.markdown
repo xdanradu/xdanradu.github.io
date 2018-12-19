@@ -33,7 +33,7 @@ public class Car {
     }
 
     public void decelerate(){
-        this.speed++;
+        this.speed--;
     }
 
     public int getInfo(){
@@ -49,7 +49,7 @@ Objects are complex variables that have state and behaviour.
 
 Real life objects (ex. dog, car, phone) can be modeled using software objects. Both of them are defined through their characteristics and behaviour. For example a car has a name and speed (this is the state) and can accelerate/decelerate (behaviour). 
 
-The characteristics of an object (like name, color, weight, etc) refer to the object's state and the methods through which the object interact with the outside world is known as the object behaviour.
+The characteristics of an object (like name, color, weight, etc) refer to the object's state and the methods through which the object interacts with the outside world is known as the object behaviour.
 
 The object models (defiend in classes) can have different levels of precision (the simplified version or the starting point for a __Car__ is presented in the previous section). 
 
