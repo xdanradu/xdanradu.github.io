@@ -92,7 +92,9 @@ public interface Vehicle {
 }
 
 public class Car implements Vehicle{
-    // we have to provide here concrete implementations for accelerate and decelerate methods declared in the Vehicle interface (ex: Class section)
+    // we have to provide here concrete implementations for accelerate 
+    // and decelerate methods declared in the Vehicle interface 
+    // see Class section for an example
 }
 ```
 
