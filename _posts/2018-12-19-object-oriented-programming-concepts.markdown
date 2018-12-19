@@ -74,7 +74,7 @@ Above we specify the object type (Car) the object name(vw) and we create it with
 
 # Interface
 
-The interface is the contract between the object and the outside world.
+An interface represents the contract between the object and the outside world.
 
 It contains only method declarations, without implementations.
 
