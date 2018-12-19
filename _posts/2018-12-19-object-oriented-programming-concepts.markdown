@@ -78,10 +78,24 @@ The interface is the contract between the object and the outside world.
 
 It contains only method declarations, without implementations.
 
-A class that implements an interface must implement all the interface methods.
+A class that implements an interface must implement all the interface's methods.
 
 Interfaces are useful for code extensibility and testing. 
-More on this topic in the polymorphism section.
+
+```java
+public interface Vehicle {
+
+    public void accelerate();
+
+    public void decelerate();
+
+}
+
+public class Car implements Vehicle{
+    // we have to provide here concrete implementations for accelerate and decelerate methods declared in the Vehicle interface (ex: Class section)
+}
+```
+
 
 # Instance vs class variables
 
