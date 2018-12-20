@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Object Oriented Programming Concepts (in progress)"
-date:   2018-11-09 15:00:00 +0300
+title:  "Object Oriented Programming Concepts"
+date:   2018-12-19 15:00:00 +0300
 categories: oop
 ---
 
