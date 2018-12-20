@@ -39,9 +39,11 @@ plugins:
 #   - vendor/bundle/
 #   - vendor/cache/
 #   - vendor/gems/
-#   - vendor/ruby/
 
 
+# Disqus Comments#   - vendor/ruby/
+disqus_short_name: dradu
+disqus_show_comment_count: true
 
 kramdown:
   input: GFM
