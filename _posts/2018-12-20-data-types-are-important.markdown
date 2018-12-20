@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Object Oriented Programming Concepts"
+title:  "Data types are important"
 date:   2018-12-20 15:00:00 +0300
 categories: oop
 ---
