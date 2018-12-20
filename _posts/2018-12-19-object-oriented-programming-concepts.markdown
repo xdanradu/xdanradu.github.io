@@ -10,6 +10,7 @@ categories: oop
 3. [What is an abstract class?](#abstract-class)
 4. [What is an interface?](#abstract-class)
 5. [Instance vs class variables](#instance-vs-class-variables)
+6. [What is a package?](#package)
 
 # Class
 
@@ -102,6 +103,8 @@ A class that implements an interface must implement all the interface's methods.
 
 Interfaces are useful for code extensibility and testing. 
 
+When a class implements an interface, it promises to provide the behavior specified in that interface.
+
 ```java
 public interface Vehicle {
 
@@ -169,3 +172,11 @@ public App{
     }
 }
 ```
+
+# Package
+
+A package is namespace for grouping related classes and interfaces in a logical manner.
+It is simillar to a folder structure in windows/linux.
+
+# References
+6. [Oracle's Java Tutorial](#https://docs.oracle.com/javase/tutorial/java/index.html)
