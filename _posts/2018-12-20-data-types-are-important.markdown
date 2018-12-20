@@ -6,15 +6,15 @@ categories: oop
 ---
 
 
-Imagine you work on a software system that responds to the user with a really long delay.
-A reasonable frontend loads the data in less than 1.5 seconds. Delays can be introduced in various parts of a system like complex database scripts, backend data processing or frontend rendering. 
-
-Your task is to boost the system's performance. 
+Imagine you work on a software system that has a really high response time.
+A reasonable frontend loads the data in less than 1.5 seconds. 
+Delays can be introduced in various parts of a system like complex database scripts, backend data processing or frontend rendering. 
 
 By debugging and measuring execution time we can easily identify the module that introduces the delay and then try to optimize the code.
 
 Let's say that we identified that the simple sum computation algorithm below is the root cause for poor performance. 
-Take a moment to spot it's main flaw:
+
+Your task is to boost the system's performance, take a moment to spot it's main flaw
 
 ```java
 public class Test{
