@@ -2,7 +2,7 @@ title: dan's blog
 email: xdanradu@yahoo.com
 description: danradu.ro
 show_downloads: false
-google_analytics:
+google_analytics: true
 theme: jekyll-theme-dinky
 
 description: >- # this means to ignore newlines until "baseurl:"
