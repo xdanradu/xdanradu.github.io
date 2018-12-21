@@ -179,5 +179,5 @@ A package is namespace for grouping related classes and interfaces in a logical 
 It is simillar to a folder structure in windows/linux.
 
 # References
-1. [Oracle's Java Tutorial](#https://docs.oracle.com/javase/tutorial/java/index.html)
-2. [Head First Java](#https://www.oreilly.com/library/view/head-first-java/0596009208/)
+1. [Oracle's Java Tutorial](https://docs.oracle.com/javase/tutorial/java/index.html)
+2. [Head First Java](https://www.oreilly.com/library/view/head-first-java/0596009208/)
