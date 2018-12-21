@@ -85,7 +85,7 @@ __\<input type="range" id="counter"/\>__
 
 - For debugging you can print messages from the JS script to the browser console (F12 > Console) with __console.log("message")__
 
-- To convert string values to int you can use __parseInt("number")__ function.
+- To convert string values to int you can use __parseInt("number")__ function
 
 
 [Source code for the example](https://github.com/xdanradu/SourceCode/tree/master/js-first-app)
