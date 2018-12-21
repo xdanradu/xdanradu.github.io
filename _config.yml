@@ -11,3 +11,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  xdanradu
 repository_url: https://www.github.com/xdanradu/xdanradu.github.io
 show_excerpts: true
+
+# Disqus Comments
+disqus_short_name: xdanradu
+disqus_show_comment_count: true
+
+markdown: redcarpet
