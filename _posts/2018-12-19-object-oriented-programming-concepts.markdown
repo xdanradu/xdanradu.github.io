@@ -55,7 +55,7 @@ public class Car {
 
 ```
 
-Above, besides the Car's behaviour (accelerate/decelerate) we included two constructors. A constructor is a public method, that has the same neame as the class and no return type, used for object's state initialization. We can have multiple constructors in a class. The only difference in the method signature being the list of input arguments. In our example we have a default constructor, with no input arguments, and a second constructor that takes name and speed as inputs.
+Above, besides the Car's behaviour (accelerate/decelerate) we included two constructors. A constructor is a public method, that has the same name as the class and no return type, used for object's state initialization. We can have multiple constructors in a class. The only difference in the method signature being the list of input arguments. In our example we have a default constructor, with no input arguments, and a second constructor that takes name and speed as inputs.
 
 # Object
 
