@@ -1,0 +1,38 @@
+body {
+    padding: 0px;
+}
+
+h1, h2, h3 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.post-list{
+    list-style-type: none;
+    padding-left:0px;
+}
+
+.post-header-custom {
+    position: none !important;
+}
+
+.home-link {
+    font-size: 25px;
+}
+
+.home-link:hover{
+    color:#efefef;
+}
+
+header {
+    margin: 0px !important;
+    width: 30px;
+    height: 30px;
+    background: #51bcff;
+    padding:15px;
+    border:0px;
+    border-radius:0px;
+}
+
+header a{
+
+}
