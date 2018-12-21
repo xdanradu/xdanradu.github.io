@@ -9,7 +9,7 @@ categories: javascript
 - __JavaScript__ is a programming language that manages the web apps logic. It is also used for complex UI components and animation
 - __CSS__ is a language that describes the HTML elements style
 
-When a web page is loaded in the browser, a __Document Object Model (DOM)__ of the page is constructed. JavaScript can access and change all the elements of an HTML document trough the DOM. The DOM is a tree object in which the root is the \<html\> element.
+When a web page is loaded in the browser, a __Document Object Model (DOM)__ of the page is constructed. JavaScript can access and change all the elements of an HTML document through the DOM. The DOM is a tree object in which the root is the \<html\> element.
 
 The following application implements a simple counter using two buttons and a display area (increment/decrement):
 
