@@ -5,9 +5,7 @@ date:   2018-10-10 15:00:00 +0300
 categories: coding best practices
 ---
 
-In this post I will share with you an OOP principle that is very useful to understand and apply in your projects:
-
-# Data encapsulation
+In this post I will share with you my thaughts on __data encapsulation__, an OOP principle that is very useful to understand and apply in your projects.
 
 Let's take the following example:
 
