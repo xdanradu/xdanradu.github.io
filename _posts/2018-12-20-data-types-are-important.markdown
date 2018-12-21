@@ -8,7 +8,7 @@ categories: performance
 
 Imagine you work on a software system that has a really high response time.
 A reasonable frontend loads the data in less than 1.5 seconds. 
-Delays can be introduced in various parts of a system like complex database scripts, backend data processing or frontend rendering. 
+Delays can be introduced in various parts of a system. Some of the most common places to investigate are: complex database scripts, backend data processing or frontend rendering. 
 
 By debugging and measuring execution time we can easily identify the module that introduces the delay and then try to optimize the code.
 
