@@ -16,4 +16,3 @@ show_excerpts: true
 disqus_short_name: xdanradu
 disqus_show_comment_count: true
 
-markdown: redcarpet
