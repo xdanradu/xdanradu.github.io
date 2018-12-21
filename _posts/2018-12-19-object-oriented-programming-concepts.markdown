@@ -83,7 +83,7 @@ Above we specify the object type (Car) the object name(vw) and we create it with
 
 # Abstract Class
 
-An abstract mehtod is a method declared without an implementation with the abstract keyword in front.
+An abstract method is a method declared without an implementation with the abstract keyword in front.
 
 An abstract class includes abstract methods.
 
