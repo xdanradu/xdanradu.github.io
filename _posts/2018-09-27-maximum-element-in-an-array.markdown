@@ -5,6 +5,9 @@ date:   2018-09-27 15:00:00 +0300
 categories: simple algorithms
 ---
 
+
+Elementary algorithms:
+
 ```js
 
 function getMin(a){
