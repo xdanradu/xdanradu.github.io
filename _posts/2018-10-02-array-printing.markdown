@@ -5,6 +5,8 @@ date:   2018-10-02 15:00:00 +0300
 categories: simple algorithms
 ---
 
+Elementary algorithms:
+
 ```javascript
 
 function reverse(a){
