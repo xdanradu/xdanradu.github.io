@@ -5,6 +5,8 @@ date:   2018-12-19 15:00:00 +0300
 categories: oop
 ---
 
+Some of the most important concepts in OOP are introduced in this post.
+
 1. [What is a class?](#class)
 2. [What is an object?](#object)
 3. [What is an abstract class?](#abstract-class)
