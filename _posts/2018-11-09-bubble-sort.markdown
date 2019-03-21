@@ -5,6 +5,8 @@ date:   2018-11-09 15:00:00 +0300
 categories: algorithms
 ---
 
+Two versions of bubblesort algorithm are presented in this post.
+
 # Version 1
 
 ```javascript
