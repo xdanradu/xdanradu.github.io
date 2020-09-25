@@ -1,0 +1,11 @@
+title: dan's projects
+email: xdanradu@yahoo.com
+description: danradu.ro
+google_analytics: true
+
+description: >- # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  xdanradu
+repository_url: https://www.github.com/xdanradu/xdanradu.github.io
+show_excerpts: true
