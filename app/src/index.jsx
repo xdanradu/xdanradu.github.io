@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.scss";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 // import store from "./redux/store";
-import reducer from "./redux/reducers";
+import reducer from "./redux-store/reducers";
 
-import { incremented } from "./redux/actions";
+import { incremented } from "./redux-store/actions";
 
 const store = createStore(reducer);
 // store.dispatch(incremented(1));

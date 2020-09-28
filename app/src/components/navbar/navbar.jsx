@@ -1,5 +1,5 @@
 import React from "react";
-import "./Navbar.css";
+import "./navbar.scss";
 
 const NavBar = ({ totalCounters }) => {
   function toggle(e) {
@@ -33,10 +33,9 @@ const NavBar = ({ totalCounters }) => {
         <a id="contact" href="#contact">
           Contact
         </a>
-        <span className="m-2">Active counters</span>
-        <span className="badge badge-pill badge-secondary">
+        <div className="badge-pill">
           {totalCounters}
-        </span>
+        </div>
         <a id="breadcrumb" onClick={(e) => toggle(e)} class="icon" >
           <i class="fa fa-bars"></i>
         </a>

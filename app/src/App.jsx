@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import NavBar from "./components/navbar";
-import Counters from "./components/counters";
+import NavBar from "./components/navbar/navbar";
+import Counters from "./components/counters/counters";
 import "./App.css";
 import {connect} from 'react-redux';
-import {incremented, created, reseted, deleted} from './redux/actions';
+import {incremented, created, reseted, deleted} from './redux-store/actions';
 
 class App extends Component {
   render() {
