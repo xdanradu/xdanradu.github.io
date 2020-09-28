@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "oswald-light";
+  src: url("./resources/fonts/Oswald-Light.ttf");
+}
+
+@font-face {
+  font-family: "oswald-extra-light";
+  src: url("./resources/fonts/Oswald-ExtraLight.ttf");
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #818181;
+  line-height: 22px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 16px;
+  font-family: "Raleway", sans-serif;
+  border-bottom: 0px solid #dedede;
+  padding-bottom: 3px;
+}
+
+.primary-blue {
+  background-color: #3498db;
+}
+
+.primary-blue-light {
+  background-color: #4aa3df;
+}
+
+.yellow {
+  background-color: #ffcc34;
+}
