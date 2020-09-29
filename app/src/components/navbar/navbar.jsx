@@ -1,5 +1,12 @@
 import React from "react";
 import "./navbar.scss";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+        Link,
+  NavLink
+} from "react-router-dom";
 
 const NavBar = ({ totalCounters }) => {
   function toggle(e) {
@@ -15,15 +22,15 @@ const NavBar = ({ totalCounters }) => {
   return (
     <nav>
       <div class="topnav" id="myTopnav">
-        <a id="home" href="#home" class="active">
+        <NavLink exact={true}  to="/" activeClassName="active">
           Home
-        </a>
-        <a id="about" href="#about">
+        </NavLink>
+        <NavLink to="/about" activeClassName="active">
           About
-        </a>
-        <a id="skills" href="#skills">
+        </NavLink>
+        <Link to="/skills" activeClassName="active">
           Skills
-        </a>
+        </Link>
         <a id="experience" href="#experience">
           Experience
         </a>
