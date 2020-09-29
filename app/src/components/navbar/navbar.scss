@@ -111,6 +111,9 @@ a.active {
 
   &.responsive {
     position: relative;
+    .badge-pill, .theme {
+      display: none;
+    }
   }
   &.responsive .icon {
     position: absolute;
