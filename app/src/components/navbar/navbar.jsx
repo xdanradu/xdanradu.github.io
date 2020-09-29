@@ -1,14 +1,22 @@
 import React from "react";
 import "./navbar.scss";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-        Link,
+  Link,
   NavLink
 } from "react-router-dom";
 
 const NavBar = ({ totalCounters }) => {
+
+  function setTheme(color) {
+    console.log('here');
+    if (color === "default")
+      color = "#08e608";
+    document
+            .documentElement
+            .style
+            .setProperty("--secondary-color", color);
+  }
+
   function toggle(e) {
     e.preventDefault();
     var topnav = document.getElementById("myTopnav");
@@ -21,14 +29,14 @@ const NavBar = ({ totalCounters }) => {
 
   return (
     <nav>
-      <div class="topnav" id="myTopnav">
-        <NavLink exact={true}  to="/" activeClassName="active">
+      <div className="topnav" id="myTopnav">
+        <NavLink exact={true}  to="/" activeclassname="active">
           Home
         </NavLink>
-        <NavLink to="/about" activeClassName="active">
+        <NavLink to="/about" activeclassname="active">
           About
         </NavLink>
-        <Link to="/skills" activeClassName="active">
+        <Link to="/skills" activeclassname="active">
           Skills
         </Link>
         <a id="experience" href="#experience">
@@ -43,12 +51,20 @@ const NavBar = ({ totalCounters }) => {
         <div className="badge-pill">
           {totalCounters}
         </div>
-        <a id="breadcrumb" onClick={(e) => toggle(e)} class="icon" >
-          <i class="fa fa-bars"></i>
+        <a id="breadcrumb" onClick={(e) => toggle(e)} className="icon" >
+          <i className="fa fa-bars"></i>
         </a>
       </div>
 
+      <div className="main">
+        <button onClick={() => setTheme("red")}>Set Theme(Red)</button>
+        <button onClick={() => setTheme("orangered")}>Set Theme(Orange-Red)</button>
+        <button onClick={() => setTheme("default")}>Reset Theme Default</button>
+      </div>
+
     </nav>
+
+
 
   );
 };

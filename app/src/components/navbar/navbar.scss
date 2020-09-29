@@ -1,7 +1,8 @@
 @import "../../index";
+
 .topnav {
   overflow: hidden;
-  background-color: $secondary;
+  background-color: var(--secondary-color);;
   font-family: oswald, sans-serif;
 }
 

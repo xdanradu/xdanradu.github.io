@@ -8,12 +8,10 @@ import {incremented, created, reseted, deleted} from './redux-store/actions';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 
 class App extends Component {
-    state = {}
   render() {
     return (
       <Router>
@@ -21,17 +19,18 @@ class App extends Component {
 
           <Switch>
               <Route exact path="/">
-                  {/*
+              </Route>
+              <Route exact path="/about">
+                  <About/>
+              </Route>
+              <Route exact path="/skills">
                   <Counters
                           onCreate={this.props.created}
                           onReset={this.props.reseted}
                           onIncrement={this.props.incremented}
                           onDelete={this.props.deleted}
                           counters={this.props.counters}
-                  />*/}
-              </Route>
-              <Route exact path="/about">
-                  <About/>
+                  />
               </Route>
           </Switch>
 
@@ -40,7 +39,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state /*, ownProps*/) => {
+const mapStateToProps = (state) => {
   return {
     counters: state.counters
   }
