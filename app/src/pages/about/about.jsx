@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./about.scss";
-import Card from "../card/card";
+import Card from "../../components/card/card";
 
 class About extends Component {
     render() {
