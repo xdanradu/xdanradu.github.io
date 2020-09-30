@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NavBar from "./components/navbar/navbar";
 import Counters from "./components/counters/counters";
 import About from "./components/about/about";
+import Home from "./components/home/home";
 import "./App.css";
 import {connect} from 'react-redux';
 import {incremented, created, reseted, deleted} from './redux-store/actions';
@@ -19,6 +20,7 @@ class App extends Component {
 
           <Switch>
               <Route exact path="/">
+                  <Home/>
               </Route>
               <Route exact path="/about">
                   <About/>
