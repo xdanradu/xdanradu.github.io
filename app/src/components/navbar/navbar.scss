@@ -85,9 +85,16 @@ a.active {
         background-color: #222;
         border-bottom: 3px solid #222;
       }
+      &.btn-dark:hover {
+        background-color: #444;
+        border-bottom: 3px solid #777;
+      }
       &.btn-light {
         background-color: #eee;
         border-bottom: 3px solid #eee;
+      }
+      &.btn-light:hover {
+        background-color: #ccc;
       }
       &.active{
         border-bottom: 3px solid var(--first-accent-color);
