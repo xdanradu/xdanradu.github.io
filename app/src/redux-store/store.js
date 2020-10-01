@@ -4,7 +4,9 @@ export const store = {
     },
     counters: [
         { id: 1, value: 0 },
-        { id: 2, value: 1 },
-        { id: 3, value: 2 },
+        { id: 2, value: 0 },
+        { id: 3, value: 0 },
+        { id: 4, value: 0 },
+        { id: 5, value: 0 }
     ],
 }

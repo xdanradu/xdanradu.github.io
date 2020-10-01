@@ -5,7 +5,7 @@ import About from "./pages/about/about";
 import Home from "./pages/home/home";
 import "./App.css";
 import {connect} from 'react-redux';
-import {incremented, created, reseted, deleted} from './redux-store/actions';
+import {decremented, incremented, created, reseted, deleted} from './redux-store/actions';
 import {
     BrowserRouter as Router,
     Switch,
@@ -13,18 +13,26 @@ import {
 } from "react-router-dom";
 
 
+
 class App extends Component {
   render() {
     return (
       <Router>
-        <NavBar totalCounters={this.props.counters.filter((c) => c.value > 0).length}/>
+        <NavBar counters={this.props.counters} onDecrement={this.props.decremented} onIncrement={this.props.incremented}  onReset={this.props.reseted}/>
 
           <Switch>
               <Route exact path="/">
                   <Home/>
               </Route>
               <Route exact path="/about">
-                  <About/>
+                  <About
+                      onCreate={this.props.created}
+                      onReset={this.props.reseted}
+                      onIncrement={this.props.incremented}
+                      onDecrement={this.props.incremented}
+                      onDelete={this.props.deleted}
+                      counters={this.props.counters}
+                  />
               </Route>
               <Route exact path="/skills">
                   <Counters
@@ -48,7 +56,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = { incremented, created, reseted, deleted }
+const mapDispatchToProps = { decremented, incremented, created, reseted, deleted }
 
 export default connect(
         mapStateToProps,

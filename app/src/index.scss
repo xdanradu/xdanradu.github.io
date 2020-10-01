@@ -8,5 +8,26 @@
     --secondary-color-light: #818181;
     --secondary-color-lighter: #bbb;
     --first-accent-color: #7dba5c;
+    --first-accent-color-dark: #539149;
+    --second-accent-color: #ffca28;
 }
 
+button {
+    display: inline-block;
+    padding: 8px 15px;
+    background: var(--secondary-color-lighter);
+    color: var(--secondary-color-dark);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    border:0px;
+
+    &:hover {
+        cursor: pointer;
+        background: var(--first-accent-color);
+    }
+
+    &:active {
+        background: var(--first-accent-color-dark);
+    }
+}

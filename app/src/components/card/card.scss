@@ -17,7 +17,6 @@
 
 .card:hover {
   opacity: 1;
-  cursor: pointer;
 }
 
 .card::before {
@@ -86,6 +85,15 @@
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+    background: var(--first-accent-color);
+  }
+
+  &:active {
+    background: var(--first-accent-color-dark);
+  }
 }
 
 .card span {

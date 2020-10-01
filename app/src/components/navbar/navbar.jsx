@@ -3,6 +3,8 @@ import "./navbar.scss";
 import {
   NavLink
 } from "react-router-dom";
+import Checkout from "../checkout/checkout";
+import About from "../../pages/about/about";
 
 const darkTheme = {
   primaryColor: "#222",
@@ -11,6 +13,8 @@ const darkTheme = {
   secondaryColorLight: "#818181",
   secondaryColorLighter: "#bbb",
   firstAccentColor: "#7dba5c",
+  firstAccentColorDark: "#539149",
+  secondAccentColor: "#ffca28"
 }
 
 const lightTheme = {
@@ -20,9 +24,11 @@ const lightTheme = {
   secondaryColorLight: "#111111",
   secondaryColorLighter: "#282828",
   firstAccentColor: "#bb0000",
+  firstAccentColorDark: "#bb0000",
+  secondAccentColor: "#1292d5"
 }
 
-const NavBar = ({ totalCounters }) => {
+const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
 
   function setTheme(option) {
     let theme = darkTheme;
@@ -40,6 +46,8 @@ const NavBar = ({ totalCounters }) => {
     document.documentElement.style.setProperty("--secondary-color-light", theme.secondaryColorLight);
     document.documentElement.style.setProperty("--secondary-color-lighter", theme.secondaryColorLighter);
     document.documentElement.style.setProperty("--first-accent-color", theme.firstAccentColor);
+    document.documentElement.style.setProperty("--first-accent-color-dark", theme.firstAccentColorDark);
+    document.documentElement.style.setProperty("--second-accent-color", theme.secondAccentColor);
   }
 
   function toggle(e) {
@@ -56,27 +64,28 @@ const NavBar = ({ totalCounters }) => {
     <nav>
       <div className="topnav" id="myTopnav">
 
-        <NavLink exact={true}  to="/" activeclassname="active">
+        <NavLink exact={true}  to="/" activeclassname="active" onClick={(e) => toggle(e)}>
           Home
         </NavLink>
         <NavLink to="/about" activeclassname="active" onClick={(e) => toggle(e)}>
           About
         </NavLink>
-        <NavLink to="/skills" activeclassname="active">
+        <NavLink to="/skills" activeclassname="active" onClick={(e) => toggle(e)}>
           Skills
         </NavLink>
-        <a id="experience" href="#experience">
+        <a id="experience" href="#experience"  onClick={(e) => toggle(e)}>
           Experience
         </a>
-        <a id="portfolio" href="#portfolio">
+        <a id="portfolio" href="#portfolio" onClick={(e) => toggle(e)}>
           Portfolio
         </a>
-        <a id="contact" href="#contact">
+        <a id="contact" href="#contact" onClick={(e) => toggle(e)}>
           Contact
         </a>
         <div className="badge-pill">
-          {totalCounters}
+          <Checkout counters={counters} onDecrement={onDecrement} onIncrement={onIncrement} onReset={onReset}/>
         </div>
+
         <div className="theme">
           <button id="dark-theme" className="btn btn-dark active" onClick={() => setTheme("dark")}> </button>
           <button id="light-theme" className="btn btn-light" onClick={() => setTheme("light")}> </button>

@@ -4,7 +4,6 @@ import VanillaTilt from "vanilla-tilt";
 
 class Home extends Component {
     componentDidMount =  function() {
-        console.log('mounted');
         VanillaTilt.init(document.querySelectorAll(".tech-logo-img, .fa"), {
             max: 10,
             speed: 400,
@@ -19,7 +18,10 @@ class Home extends Component {
 
         return (
             <div className="home-container">
-
+                <div className="container">
+                    <div className="image">
+                        <img src={require("../../resources/images/dan.jpg")} />
+                    </div>
                 <div className="description">
                     <p>I have 12+ years of programming experience and previously worked with a wide range of
                         software technologies and architectures, both on desktop and web applications.
@@ -31,8 +33,7 @@ class Home extends Component {
                         <div><i className="fa fa-facebook"></i></div>
                     </a>
                 </div>
-                <div className="image">
-                    <img src={require("../../resources/images/dan.jpg")} />
+
                 </div>
             </div>
         );

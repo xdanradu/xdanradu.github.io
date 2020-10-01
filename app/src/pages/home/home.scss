@@ -11,65 +11,78 @@
   justify-content: center;
   overflow: auto;
 
-  .description{
-    flex:1 0 400px;
-    width: 400px;
-    max-width: 700px;
-    padding:10px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size:14px;
+  .container {
+    height:700px;
+    overflow: auto;
+    .description {
+      flex: 1 0 400px;
+      width: 400px;
+      max-width: 700px;
+      padding: 10px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
 
-    .tech-logo {
-      background: #222;
-      width:50px;
-      height: 50px;
-    }
-    .tech-logo img {
-      width:50px;
-      height: 50px;
+      .tech-logo {
+        width: 40px;
+        height: 40px;
+      }
+
+      .tech-logo img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .tech-logo img:hover {
+        cursor: pointer;
+      }
+
+      .icons {
+        display: flex;
+        justify-content: center;
+
+        div {
+          margin: 10px;
+          font-size: 20px;
+        }
+
+        div:hover {
+          cursor: pointer;
+          color: var(--first-accent-color);
+        }
+
+      }
+
     }
 
-    .tech-logo img:hover {
-      cursor: pointer;
-    }
-    .icons {
+    .image {
+
+      flex: 1 0 300px;
+      width: 300px;
+      height: 300px;
+      max-width: 500px;
       display: flex;
       justify-content: center;
-      div {
-        margin:10px;
-        font-size: 20px;
-      }
 
-      div:hover {
-        cursor: pointer;
-        color: var(--first-accent-color);
-      }
+      img {
+        width: 300px;
+        height: 300px;
+        opacity: 0.5;
+        transition: 0.5s;
+        border: 1px solid var(--secondary-color-light);
 
+        &:hover {
+          opacity: 1;
+
+        }
+
+      }
     }
 
+
   }
 
-  .image {
-    flex:1 0 500px;
-    width: 500px;
-    height:500px;
-    max-width: 500px;
-    display:flex;
-    justify-content: center;
-  }
 
-  img {
-    width: 400px;
-    height:400px;
-    opacity: 0.5;
-    transition: 0.5s;
-
-  &:hover{
-    opacity: 1;
-
-    }
-  }
 
 
 }

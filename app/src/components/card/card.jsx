@@ -3,7 +3,7 @@ import "./card.scss";
 
 class Card extends Component {
     render() {
-        let {position, title, description, ctaName} = this.props;
+        let {position, title, description, counter, onIncrement} = this.props;
         return (
                 <div className="card">
                     <span></span>
@@ -14,7 +14,7 @@ class Card extends Component {
                         <h2>{position}</h2>
                         <h3>{title}</h3>
                         <p>{description}</p>
-                        <a href="#">Add to cart</a>
+                        <a onClick={() => onIncrement(counter)}>Add to cart</a>
                     </div>
                 </div>
         );
