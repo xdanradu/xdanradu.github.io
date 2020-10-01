@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NavBar from "./components/navbar/navbar";
 import Counters from "./components/counters/counters";
 import About from "./pages/about/about";
+import Skills from "./pages/skills/skills";
 import Home from "./pages/home/home";
 import "./App.css";
 import {connect} from 'react-redux';
@@ -25,22 +26,22 @@ class App extends Component {
                   <Home/>
               </Route>
               <Route exact path="/about">
-                  <About
+                <About
+                    onCreate={this.props.created}
+                    onReset={this.props.reseted}
+                    onIncrement={this.props.incremented}
+                    onDelete={this.props.deleted}
+                    counters={this.props.counters}
+                />
+              </Route>
+              <Route exact path="/skills">
+                  <Skills
                       onCreate={this.props.created}
                       onReset={this.props.reseted}
                       onIncrement={this.props.incremented}
                       onDecrement={this.props.incremented}
                       onDelete={this.props.deleted}
                       counters={this.props.counters}
-                  />
-              </Route>
-              <Route exact path="/skills">
-                  <Counters
-                          onCreate={this.props.created}
-                          onReset={this.props.reseted}
-                          onIncrement={this.props.incremented}
-                          onDelete={this.props.deleted}
-                          counters={this.props.counters}
                   />
               </Route>
           </Switch>

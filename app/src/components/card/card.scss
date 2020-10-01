@@ -190,3 +190,18 @@
   }
 
 }
+
+
+.counter-badge{
+  position: absolute;
+  bottom:10px;
+  left:10px;
+  text-align: center;
+  vertical-align: center;
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  background-color: var(--first-accent-color);
+  color: var(--primary-color);
+
+}

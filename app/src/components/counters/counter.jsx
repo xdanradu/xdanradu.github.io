@@ -3,23 +3,18 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   render() {
+      let {counter, onIncrement, onReset, onDelete, onCreate} = this.props;
     console.log("Counter rendered");
     return (
       <React.Fragment>
         {this.props.children}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button
-          className="btn btn-primary m-2"
-          onClick={() => this.props.onIncrement(this.props.counter)}
-        >
-          Increment
-        </button>
-        <button
-          className="btn btn-danger m-2"
-          onClick={() => this.props.onDelete(this.props.counter.id)}
-        >
-          Delete
-        </button>
+
+
+          <button className="action-btn" onClick={() => onIncrement(counter)}><i className="fa fa-plus"></i></button>
+          <button className="action-btn" onClick={() => onDelete(counter.id)}><i className="fa fa-remove"></i></button>
+
+
       </React.Fragment>
     );
   }
