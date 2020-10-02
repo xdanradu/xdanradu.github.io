@@ -30,11 +30,12 @@ class Home extends Component {
                          <br/>I also have experience with the Agile process and understand the benefits of the CI/CD (Jenkins, Docker, AWS) pipeline.
 
                         </p>
+                    <div className="tech-container">
                     <div className="tech-logo"><img className="tech-logo-img" src={require("../../resources/images/javascript.png")} /></div>
                     <div className="tech-logo"><img className="tech-logo-img" src={require("../../resources/images/angular.png")} /></div>
                     <div className="tech-logo"><img className="tech-logo-img" src={require("../../resources/images/spring-boot.png")} /></div>
                     <div className="tech-logo"><img className="tech-logo-img" src={require("../../resources/images/git.png")} /></div>
-
+                    </div>
                     {/*<p>I am a lecturer at the <b>Technical University of Cluj-Napoca</b> since 2012 when I defended my PhD thesis called
                         "<b>Efficient Routing Strategies for Mobile Ad Hoc Networks</b>". </p>*/}
 

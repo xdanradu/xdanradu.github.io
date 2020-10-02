@@ -16,8 +16,8 @@
     overflow: auto;
 
     .description {
-      flex: 1 0 320px;
-      width: 320px;
+      flex: 1 0 560px;
+      width: 560px;
       max-width: 700px;
       padding: 10px;
       font-family: "Roboto", sans-serif;
@@ -31,11 +31,16 @@
         line-height: 1.8;
       }
 
+      .tech-container{
+        width:100%;
+        text-align: center;
+      }
       .tech-logo {
         width: 40px;
         height: 40px;
         display: inline-block;
         margin:0 18px 0;
+
       }
 
       .tech-logo img {
