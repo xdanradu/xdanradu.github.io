@@ -45,7 +45,11 @@ class Checkout extends Component {
         let {counters, onDecrement, onDelete, onIncrement, onReset} = this.props;
         return (
             <Popup
-                trigger={<button className={`button ${counters.filter((c) => c.value > 0).length==0?'empty':'not-empty'}`}> {counters.filter((c) => c.value > 0).length} </button>}
+                trigger={
+                    <div>
+                        <i className="fa fa-shopping-cart shopping-cart-icon"></i>
+                        <button className={`button ${counters.filter((c) => c.value > 0).length==0?'empty':'not-empty'}`}> {counters.filter((c) => c.value > 0).length} </button>
+                    </div>}
                 modal
                 nested
             >

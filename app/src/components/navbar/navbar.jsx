@@ -67,32 +67,35 @@ const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
         <NavLink exact={true}  to="/" activeclassname="active" onClick={(e) => toggle(e)}>
           Home
         </NavLink>
-        <NavLink to="/about" activeclassname="active" onClick={(e) => toggle(e)}>
+        {/*<NavLink to="/about" activeclassname="active" onClick={(e) => toggle(e)}>
           About
-        </NavLink>
+        </NavLink>*/}
         <NavLink to="/skills" activeclassname="active" onClick={(e) => toggle(e)}>
           Skills
         </NavLink>
-        <a id="experience" href="#experience"  onClick={(e) => toggle(e)}>
-          Experience
-        </a>
-        <a id="portfolio" href="#portfolio" onClick={(e) => toggle(e)}>
+        {/*<a id="experience" href="#experience"  onClick={(e) => toggle(e)}>
+          Clients
+        </a>*/}
+        {/*<a id="portfolio" href="#portfolio" onClick={(e) => toggle(e)}>
           Portfolio
-        </a>
-        <a id="contact" href="#contact" onClick={(e) => toggle(e)}>
+        </a>*/}
+        {/*<a id="contact" href="#contact" onClick={(e) => toggle(e)}>
           Contact
-        </a>
+        </a>*/}
         <div className="badge-pill">
           <Checkout counters={counters} onDecrement={onDecrement} onIncrement={onIncrement} onReset={onReset}/>
         </div>
+
+
+        <a id="breadcrumb" onClick={(e) => toggle(e)} className="icon" >
+          <i className="fa fa-bars"></i>
+        </a>
 
         <div className="theme">
           <button id="dark-theme" className="btn btn-dark active" onClick={() => setTheme("dark")}> </button>
           <button id="light-theme" className="btn btn-light" onClick={() => setTheme("light")}> </button>
         </div>
-        <a id="breadcrumb" onClick={(e) => toggle(e)} className="icon" >
-          <i className="fa fa-bars"></i>
-        </a>
+
       </div>
 
 

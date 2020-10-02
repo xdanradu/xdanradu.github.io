@@ -12,20 +12,30 @@
   overflow: auto;
 
   .container {
-    height:700px;
+    height:800px;
     overflow: auto;
+
     .description {
-      flex: 1 0 400px;
-      width: 400px;
+      flex: 1 0 320px;
+      width: 320px;
       max-width: 700px;
       padding: 10px;
       font-family: "Roboto", sans-serif;
       font-weight: 400;
       font-size: 14px;
 
+      text-align: justify;
+
+      p {
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
       .tech-logo {
         width: 40px;
         height: 40px;
+        display: inline-block;
+        margin:0 18px 0;
       }
 
       .tech-logo img {
@@ -37,7 +47,9 @@
         cursor: pointer;
       }
 
-      .icons {
+      .social-icons {
+        padding-top:10px;
+        width:100%;
         display: flex;
         justify-content: center;
 
@@ -57,19 +69,18 @@
 
     .image {
 
-      flex: 1 0 300px;
-      width: 300px;
-      height: 300px;
-      max-width: 500px;
-      display: flex;
-      justify-content: center;
+      width: 100px;
+      height: 100px;
+      width:100%;
+      text-align: center;
 
       img {
-        width: 300px;
-        height: 300px;
-        opacity: 0.5;
+        width: 100px;
+        height: 100px;
+        opacity: 0.9;
         transition: 0.5s;
         border: 1px solid var(--secondary-color-light);
+        border-radius: 50%;
 
         &:hover {
           opacity: 1;

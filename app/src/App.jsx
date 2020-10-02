@@ -25,7 +25,7 @@ class App extends Component {
               <Route exact path="/">
                   <Home/>
               </Route>
-              <Route exact path="/about">
+              {/*<Route exact path="/about">
                 <About
                     onCreate={this.props.created}
                     onReset={this.props.reseted}
@@ -33,7 +33,7 @@ class App extends Component {
                     onDelete={this.props.deleted}
                     counters={this.props.counters}
                 />
-              </Route>
+              </Route>*/}
               <Route exact path="/skills">
                   <Skills
                       onCreate={this.props.created}

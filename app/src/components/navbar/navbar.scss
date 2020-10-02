@@ -59,9 +59,10 @@ a.active {
   }
 
   .theme {
-    float: right;
+    float: left;
+    margin-left:18px;
     margin-top:12px;
-    margin-right:12px;
+
     button:focus {
       outline:0;
     }
@@ -131,7 +132,8 @@ a.active {
     margin-left:12px;
   }
   .theme {
-    float: left;
+    float: right;
+    margin-top:14px;
   }
 }
 
