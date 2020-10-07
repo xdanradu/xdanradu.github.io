@@ -44,6 +44,8 @@
 
 .popup-content {
   padding:0px !important;
+  border: 1px solid var(--first-accent-color-darker) !important;
+  width:50% !important;
 }
 
 .button {
@@ -106,3 +108,11 @@
     left: 30px;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .popup-content {
+    width:90% !important;
+  }
+}
+
+
