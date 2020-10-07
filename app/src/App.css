@@ -15,8 +15,7 @@ body {
   font-size: 14px;
   color: var(--secondary-color-lighter);
   line-height: 22px;
-  overflow-y: hidden;
-  overflow-x: hidden;
+
   -webkit-font-smoothing: antialiased;
   background: var(--primary-color);
   margin: 0;
@@ -26,7 +25,7 @@ h1,
 h2,
 h3 {
   margin-top: 16px;
-  font-family: "Raleway", sans-serif;
+  font-family: oswald-extra-light, sans-serif;
   border-bottom: 0px solid #dedede;
   padding-bottom: 3px;
 }

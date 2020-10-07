@@ -12,8 +12,7 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-
-
+import Shop from "./pages/shop/shop";
 
 class App extends Component {
   render() {
@@ -35,7 +34,10 @@ class App extends Component {
                 />
               </Route>*/}
               <Route exact path="/skills">
-                  <Skills
+                  <Skills/>
+              </Route>
+              <Route exact path="/shop">
+                  <Shop
                       onCreate={this.props.created}
                       onReset={this.props.reseted}
                       onIncrement={this.props.incremented}

@@ -73,6 +73,9 @@ const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
         <NavLink to="/skills" activeclassname="active" onClick={(e) => toggle(e)}>
           Skills
         </NavLink>
+        <NavLink to="/shop" activeclassname="active" onClick={(e) => toggle(e)}>
+          Shop
+        </NavLink>
         {/*<a id="experience" href="#experience"  onClick={(e) => toggle(e)}>
           Clients
         </a>*/}
