@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Single Responsibility",
+    "code": ""
+  },
+  {
+    "title": "Open/Closed",
+    "code": ""
+  },
+  {
+    "title": "Liskov Substitution",
+    "code": ""
+  },
+  {
+    "title": "Interface Segregation",
+    "code": ""
+  },
+  {
+    "title": "Dependency Inversion",
+    "code": "class StripePaymentMethod {\n  \n  constructor(user) {\n    this.stripe = new Stripe(user); \n  }\n\n  pay(product){\n    this.stripe.pay(product);\n  }\n}\n\nclass Stripe {\n  constructor(user) {\n    this.user = user;\n  }\n\n  pay(product) {\n    console.log(\\`\\${this.user.name} payed \\${product.price} for \\${product.name} with Stripe\\`);\n  }\n}\n\nclass PaypalPaymentMethod {\n  \n  constructor(user) {\n    this.paypal = new Paypal(); \n    this.user = user;\n  }\n\n  pay(product){\n    this.paypal.pay(this.user, product);\n  }\n}\n\nclass Paypal {\n  pay(user, product) {\n    console.log(\\`\\${user.name} Payed \\${product.price} for \\${product.name} with Paypal\\`);\n  }\n}\n\nclass Checkout {\n  constructor(paymentMethod){\n    this.paymentMethod = paymentMethod;\n  }\n\n  purchase(product) {\n    this.paymentMethod.pay(product);\n  }\n\n  purchaseWithDiscount(product) {\n    product.price = product.price/2;\n    this.paymentMethod.pay(product);\n  }\n\n}\n\n//const checkout = new Checkout(new StripePaymentMethod({name:'John'}));\nconst checkout = new Checkout(new PaypalPaymentMethod({name:'John'}));\n\ncheckout.purchase({name: 'bike', price: 100});\n\n  "
+  }
+]

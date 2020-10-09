@@ -4,7 +4,7 @@ import {
   NavLink
 } from "react-router-dom";
 import Checkout from "../checkout/checkout";
-import About from "../../pages/about/about";
+import Logo from "../../components/logo/logo";
 
 const darkTheme = {
   primaryColor: "#222",
@@ -63,6 +63,7 @@ const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
   return (
     <nav>
       <div className="topnav" id="myTopnav">
+        <Logo/>
 
         <NavLink exact={true}  to="/" activeclassname="active" onClick={(e) => toggle(e)}>
           Home
