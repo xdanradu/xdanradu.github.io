@@ -4,7 +4,10 @@ import "./logo.scss";
 class Logo extends Component {
     render() {
         return (
-                    <div className="site-title"></div>
+            <div className="site-logo-container">
+                <div className="site-title"></div>
+            </div>
+
         );
     }
 }

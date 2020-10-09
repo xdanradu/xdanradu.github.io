@@ -1,5 +1,12 @@
 @import "../../index";
 
+.site-logo-container {
+  width: 100px;
+  height: 48px;
+  overflow: hidden;
+  float:left;
+}
+
 .site-title {
   float:left;
   display: inline-block;
@@ -9,29 +16,28 @@
   height: 30px;
   text-indent: -9999px;
   padding:0;
-  margin-top:12px;
-  margin-left:12px;
-  // transition: background 0.5s linear;
   animation-duration: 0.5s;
   animation-name: headerIcon_c-o;
+  margin-top:12px;
+  margin-left:6px;
 }
 
 @keyframes headerIcon_o-c {
   0% {
     margin-top:12px;
-    margin-left:12px;
+    margin-left:6px;
     width:30px;
     height:30px;
   }
   50% {
-    margin-top:8px;
-    margin-left:8px;
+    margin-top:6px;
+    margin-left:2px;
     width:40px;
     height:40px;
   }
   100% {
     margin-top:12px;
-    margin-left:12px;
+    margin-left:6px;
     width:30px;
     height:30px;
   }
@@ -40,19 +46,19 @@
 @keyframes headerIcon_c-o {
   0% {
     margin-top:12px;
-    margin-left:12px;
+    margin-left:6px;
     width:90px;
     height:30px;
   }
   50% {
-    margin-top:8px;
-    margin-left:8px;
+    margin-top:6px;
+    margin-left:2px;
     width:100px;
     height:40px;
   }
   100% {
     margin-top:12px;
-    margin-left:12px;
+    margin-left:6px;
     width:90px;
     height:30px;
   }
@@ -67,6 +73,9 @@
     animation-duration: 0.5s;
 
   }
+  .site-logo-container {
+    width: 40px;
+  }
 }
 
 @media only screen and (max-width: 959px) {
@@ -75,5 +84,8 @@
     width: 30px;
     animation-name: headerIcon_o-c;
     animation-duration: 0.5s;
+  }
+  .site-logo-container {
+    width: 40px;
   }
 }
