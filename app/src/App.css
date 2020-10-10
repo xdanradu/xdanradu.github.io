@@ -9,6 +9,11 @@
   src: url("./resources/fonts/Oswald-ExtraLight.ttf");
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: url("./resources/fonts/Roboto-Regular.ttf");
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
