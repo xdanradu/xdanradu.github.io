@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import "./home.scss";
 import VanillaTilt from "vanilla-tilt";
+import LazyLoad from 'react-lazyload';
+
+function MyImage() {
+    return <div className="image">
+                <LazyLoad once>
+                    <img src={require("../../resources/images/dan.jpg")} />
+                </LazyLoad>
+           </div>;
+}
 
 class Home extends Component {
     componentDidMount =  function() {
@@ -19,9 +28,7 @@ class Home extends Component {
         return (
             <div className="home-container">
                 <div className="container">
-                    <div className="image">
-                        <img src={require("../../resources/images/dan.jpg")} />
-                    </div>
+                    <MyImage/>
                 <div className="description">
                     <p className="my-description">My name is <b>Dan Radu</b>, I'm a <b>fullstack Software Developer</b> based in Cluj-Napoca, Romania.</p>
                     <p>I have over 12 years of programming experience and previously worked with a wide range of
