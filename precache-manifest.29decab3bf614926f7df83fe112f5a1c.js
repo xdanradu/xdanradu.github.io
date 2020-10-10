@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c171fa13d5bb46aa38c4e02def5023b5",
+    "revision": "6880053e413b3f1f60e6060abad4f61b",
     "url": "/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/4.4599ba3f.chunk.css"
   },
   {
-    "revision": "947258e2f70c37e7c080",
-    "url": "/static/css/main.2b91f328.chunk.css"
+    "revision": "35e3e6fc5ae69d2ba349",
+    "url": "/static/css/main.8020ebc1.chunk.css"
   },
   {
     "revision": "3008bca38fca9c9005fa",
@@ -40,7 +40,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/5.ac8cac41.chunk.js"
   },
   {
-    "revision": "947258e2f70c37e7c080",
+    "revision": "35e3e6fc5ae69d2ba349",
     "url": "/static/js/main.55656143.chunk.js"
   },
   {
@@ -54,6 +54,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4be970a1b24aa834afff4b16842c8981",
     "url": "/static/media/Oswald-Light.4be970a1.ttf"
+  },
+  {
+    "revision": "11eabca2251325cfc5589c9c6fb57b46",
+    "url": "/static/media/Roboto-Regular.11eabca2.ttf"
   },
   {
     "revision": "22da4d47dc9ffa3fea6fab017292d7b1",
