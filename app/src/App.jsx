@@ -1,9 +1,5 @@
-import React, { Component } from "react";
-import NavBar from "./components/navbar/navbar";
-import Counters from "./components/counters/counters";
-import About from "./pages/about/about";
+import React, { Component, lazy, Suspense } from "react";
 import Skills from "./pages/skills/skills";
-import Home from "./pages/home/home";
 import "./App.css";
 import {connect} from 'react-redux';
 import {decremented, incremented, created, reseted, deleted} from './redux-store/actions';
@@ -14,25 +10,23 @@ import {
 } from "react-router-dom";
 import Shop from "./pages/shop/shop";
 
+const NavBar = lazy(() => import("./components/navbar/navbar"));
+const Home = lazy(() => import("./pages/home/home"));
+
 class App extends Component {
   render() {
     return (
       <Router>
-        <NavBar counters={this.props.counters} onDecrement={this.props.decremented} onIncrement={this.props.incremented}  onReset={this.props.reseted}/>
+          <Suspense fallback={<div>Loading... </div>}>
+            <NavBar counters={this.props.counters} onDecrement={this.props.decremented} onIncrement={this.props.incremented}  onReset={this.props.reseted}/>
+          </Suspense>
 
           <Switch>
               <Route exact path="/">
-                  <Home/>
+                  <Suspense fallback={<div>Loading... </div>}>
+                    <Home/>
+                  </Suspense>
               </Route>
-              {/*<Route exact path="/about">
-                <About
-                    onCreate={this.props.created}
-                    onReset={this.props.reseted}
-                    onIncrement={this.props.incremented}
-                    onDelete={this.props.deleted}
-                    counters={this.props.counters}
-                />
-              </Route>*/}
               <Route exact path="/skills">
                   <Skills/>
               </Route>
