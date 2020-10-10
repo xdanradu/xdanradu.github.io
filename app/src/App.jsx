@@ -21,6 +21,7 @@ class App extends Component {
             <NavBar counters={this.props.counters} onDecrement={this.props.decremented} onIncrement={this.props.incremented}  onReset={this.props.reseted}/>
           </Suspense>
 
+          <div className="page-layout">
           <Switch>
               <Route exact path="/">
                   <Suspense fallback={<div>Loading... </div>}>
@@ -41,6 +42,7 @@ class App extends Component {
                   />
               </Route>
           </Switch>
+          </div>
 
       </Router>
     );

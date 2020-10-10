@@ -1,5 +1,14 @@
 @import "../../index";
 
+#myTopnav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.5s ease-in-out;
+  z-index:100;
+}
+
 .topnav {
   overflow: hidden;
   background-color: var(--secondary-color-darker);

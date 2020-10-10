@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import "./navbar.scss";
 import {
   NavLink
@@ -30,9 +30,25 @@ const lightTheme = {
   secondAccentColor: "#1292d5"
 }
 
-const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
+class NavBar extends Component {
+// const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
 
-  function setTheme(option) {
+  componentDidMount() {
+    console.log('Component mounted');
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      console.log('s');
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("myTopnav").style.top = "0";
+      } else {
+        document.getElementById("myTopnav").style.top = "-70px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  }
+
+  setTheme(option) {
     let theme = darkTheme;
     if (option === "light") {
       theme = lightTheme;
@@ -52,7 +68,7 @@ const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
     document.documentElement.style.setProperty("--second-accent-color", theme.secondAccentColor);
   }
 
-  function toggle(e) {
+  toggle(e) {
     //e.preventDefault();
     var topnav = document.getElementById("myTopnav");
     if (topnav.className === "topnav") {
@@ -62,54 +78,40 @@ const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
     }
   }
 
-  return (
-    <nav>
+  render () {
+    let { counters, onDecrement, onIncrement, onReset } = this.props;
+    return <nav>
       <div className="topnav" id="myTopnav">
         <Logo/>
 
-        <NavLink exact={true}  to="/" activeclassname="active" onClick={(e) => toggle(e)}>
+        <NavLink exact={true}  to="/" activeclassname="active" onClick={(e) => this.toggle(e)}>
           Home
         </NavLink>
-        {/*<NavLink to="/about" activeclassname="active" onClick={(e) => toggle(e)}>
-          About
-        </NavLink>*/}
-        <NavLink to="/skills" activeclassname="active" onClick={(e) => toggle(e)}>
+        <NavLink to="/skills" activeclassname="active" onClick={(e) => this.toggle(e)}>
           Skills
         </NavLink>
-        <NavLink to="/shop" activeclassname="active" onClick={(e) => toggle(e)}>
+        <NavLink to="/shop" activeclassname="active" onClick={(e) => this.toggle(e)}>
           Shop
         </NavLink>
-        {/*<a id="experience" href="#experience"  onClick={(e) => toggle(e)}>
-          Clients
-        </a>*/}
-        {/*<a id="portfolio" href="#portfolio" onClick={(e) => toggle(e)}>
-          Portfolio
-        </a>*/}
-        {/*<a id="contact" href="#contact" onClick={(e) => toggle(e)}>
-          Contact
-        </a>*/}
         <div className="badge-pill">
           <Checkout counters={counters} onDecrement={onDecrement} onIncrement={onIncrement} onReset={onReset}/>
         </div>
 
 
-        <a id="breadcrumb" onClick={(e) => toggle(e)} className="icon" >
+        <a id="breadcrumb" onClick={(e) => this.toggle(e)} className="icon" >
           <SmallIcon icon={BarsIcon}/>
         </a>
 
         <div className="theme">
-          <button id="dark-theme" className="btn btn-dark active" onClick={() => setTheme("dark")}> </button>
-          <button id="light-theme" className="btn btn-light" onClick={() => setTheme("light")}> </button>
+          <button id="dark-theme" className="btn btn-dark active" onClick={() => this.setTheme("dark")}> </button>
+          <button id="light-theme" className="btn btn-light" onClick={() => this.setTheme("light")}> </button>
         </div>
 
       </div>
 
 
     </nav>
-
-
-
-  );
+  };
 };
 
 export default NavBar;
