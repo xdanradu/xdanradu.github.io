@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import "./accordion-item.scss";
 import Prism from "prismjs";
+import ReactDOMServer from 'react-dom/server';
+import {ChevronDown} from "../icons/chevron-down";
+import {ChevronUp} from "../icons/chevron-up";
 
 function AccordionItemCode(props) {
     let {code} = props;
@@ -9,10 +12,11 @@ function AccordionItemCode(props) {
 }
 function AccordionItemToggleButton(props) {
     let {display} = props;
-    if (display) return <i id="solid-icon" className="fa fa-angle-down"></i>;
+    if (display) return  <div id="solid-icon" class="toggle-chevron" >
+                        <ChevronDown/>
+                    </div>;
     return "";
 }
-
 
 class AccordionItem extends Component {
     componentDidMount() {
@@ -25,12 +29,12 @@ class AccordionItem extends Component {
         if (container.style.display === "none") {
             container.style.display = "block";
             container.style.opacity = "1";
-            containerIcon.className = 'fa fa-angle-up';
+            containerIcon.innerHTML = ReactDOMServer.renderToString(ChevronUp());
 
         } else {
             container.style.display = "none";
             container.style.opacity = "0";
-            containerIcon.className = 'fa fa-angle-down';
+            containerIcon.innerHTML = ReactDOMServer.renderToString(ChevronDown());
         }
     }
 

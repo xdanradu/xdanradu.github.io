@@ -9,7 +9,6 @@ import {
     Route
 } from "react-router-dom";
 import Shop from "./pages/shop/shop";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const NavBar = lazy(() => import("./components/navbar/navbar"));
 const Home = lazy(() => import("./pages/home/home"));
