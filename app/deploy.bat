@@ -1,4 +1,3 @@
-
 echo "COPY the build to the root folder xdanradu.github.io"
 cd ..
 SET PARENT_FOLDER=%cd%
