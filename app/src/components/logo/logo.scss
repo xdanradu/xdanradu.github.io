@@ -10,7 +10,7 @@
 .site-title {
   float:left;
   display: inline-block;
-  background: url("./assets/logo-large.png") no-repeat center center;
+  background: url("./assets/logo-large.svg") no-repeat center center;
   background-size: contain;
   width: 90px;
   height: 30px;
@@ -67,7 +67,7 @@
 
 @media only screen and (max-width: 959px) {
   .site-title {
-    background-image: url("./assets/logo-small.png");
+    background-image: url("./assets/logo-small.svg");
     width: 30px;
     animation-name: headerIcon_o-c;
     animation-duration: 0.5s;
@@ -80,7 +80,7 @@
 
 @media only screen and (max-width: 959px) {
   .site-title {
-    background-image: url("./assets/logo-small.png");
+    background-image: url("./assets/logo-small.svg");
     width: 30px;
     animation-name: headerIcon_o-c;
     animation-duration: 0.5s;

@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import "./checkout.scss";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import Counter from "../counters/counter";
+import {ShoppingCart} from "../icons/shopping-cart";
+import {RemoveIcon} from "../icons/remove-icon";
+import {SmallIcon} from "../icons/small-icon";
+import {PlusIcon} from "../icons/plus-icon";
+import {MinusIcon} from "../icons/minus-icon";
 
 function EmptyCheckout(props) {
     return <div className="center">There are no products inside the cart yet</div>;
@@ -18,9 +22,9 @@ function ProductList(props) {
             products.filter((c) => c.value > 0).map((product) => (
             <div>
                 <h4>Product id: {product.id} Quantity: {product.value}
-                    <button className="action-btn" onClick={() => onIncrement(product)}><i className="fa fa-plus"></i></button>
-                    <button className="action-btn" onClick={() => onDecrement(product)}><i className="fa fa-minus"></i></button>
-                    <button className="action-btn" onClick={() => onReset(product)}><i className="fa fa-remove"></i></button>
+                    <button className="action-btn" onClick={() => onIncrement(product)}><SmallIcon icon={PlusIcon}/></button>
+                    <button className="action-btn" onClick={() => onDecrement(product)}><SmallIcon icon={MinusIcon}/></button>
+                    <button className="action-btn" onClick={() => onReset(product)}><SmallIcon icon={RemoveIcon}/></button>
                 </h4>
             </div>
             ))
@@ -47,7 +51,7 @@ class Checkout extends Component {
             <Popup
                 trigger={
                     <div>
-                        <i className="fa fa-shopping-cart shopping-cart-icon"></i>
+                        <div className="shopping-cart-icon"><ShoppingCart /></div>
                         <button className={`button ${counters.filter((c) => c.value > 0).length==0?'empty':'not-empty'}`}> {counters.filter((c) => c.value > 0).length} </button>
                     </div>}
                 modal

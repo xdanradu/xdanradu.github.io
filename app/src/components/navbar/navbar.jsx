@@ -5,6 +5,8 @@ import {
 } from "react-router-dom";
 import Checkout from "../checkout/checkout";
 import Logo from "../../components/logo/logo";
+import {SmallIcon} from "../icons/small-icon";
+import {BarsIcon} from "../icons/bars-icon";
 
 const darkTheme = {
   primaryColor: "#222",
@@ -92,7 +94,7 @@ const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
 
 
         <a id="breadcrumb" onClick={(e) => toggle(e)} className="icon" >
-          <i className="fa fa-bars"></i>
+          <SmallIcon icon={BarsIcon}/>
         </a>
 
         <div className="theme">
