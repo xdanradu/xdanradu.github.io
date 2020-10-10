@@ -109,6 +109,7 @@ a.active {
 
 
 @media screen and (max-width: 600px) {
+
   a {
     display: none;
   }
@@ -120,7 +121,7 @@ a.active {
 
   &.responsive {
     position: relative;
-    .badge-pill, .theme {
+    .badge-pill, .theme, .topnav-logo {
       display: none;
     }
   }

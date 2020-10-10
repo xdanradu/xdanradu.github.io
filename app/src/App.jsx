@@ -43,7 +43,7 @@ class App extends Component {
               </Route>
           </Switch>
           </div>
-
+          <div id="bottom-menu">&copy; 2020</div>
       </Router>
     );
   }

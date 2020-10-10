@@ -38,3 +38,14 @@ h3 {
 .page-layout {
   margin-top:70px;
 }
+
+#bottom-menu {
+  position: fixed;
+  bottom: -30px;
+  width: 100%;
+  height: auto;
+  background: var(--secondary-color-darker);
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s ease-in-out;
+  text-align: center;
+}

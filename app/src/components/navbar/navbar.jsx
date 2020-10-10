@@ -34,17 +34,25 @@ class NavBar extends Component {
 // const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
 
   componentDidMount() {
-    console.log('Component mounted');
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
-      console.log('s');
-      var currentScrollPos = window.pageYOffset;
+      let currentScrollPos = window.pageYOffset;
       if (prevScrollpos > currentScrollPos) {
         document.getElementById("myTopnav").style.top = "0";
       } else {
         document.getElementById("myTopnav").style.top = "-70px";
       }
       prevScrollpos = currentScrollPos;
+
+
+
+      if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        document.getElementById("bottom-menu").style.bottom = "0px";
+      } else {
+        document.getElementById("bottom-menu").style.bottom = "-30px";
+      }
+
+
     }
   }
 
@@ -82,7 +90,10 @@ class NavBar extends Component {
     let { counters, onDecrement, onIncrement, onReset } = this.props;
     return <nav>
       <div className="topnav" id="myTopnav">
-        <Logo/>
+        <div class="topnav-logo">
+          <Logo/>
+        </div>
+
 
         <NavLink exact={true}  to="/" activeclassname="active" onClick={(e) => this.toggle(e)}>
           Home
