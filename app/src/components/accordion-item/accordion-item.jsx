@@ -12,7 +12,7 @@ function AccordionItemCode(props) {
 }
 function AccordionItemToggleButton(props) {
     let {display} = props;
-    if (display) return  <div id="solid-icon" class="toggle-chevron" >
+    if (display) return  <div id="solid-icon" className="toggle-chevron" >
                         <ChevronDownIcon/>
                     </div>;
     return "";

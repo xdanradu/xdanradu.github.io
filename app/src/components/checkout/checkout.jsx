@@ -8,7 +8,7 @@ import {SmallIcon} from "../icons/small-icon";
 import {PlusIcon} from "../icons/plus-icon";
 import {MinusIcon} from "../icons/minus-icon";
 
-function EmptyCheckout(props) {
+function EmptyCheckout() {
     return <div className="center">There are no products inside the cart yet</div>;
 }
 
@@ -40,7 +40,7 @@ function Products(props){
     if(isEmpty) {
         return <EmptyCheckout/>;
     } else {
-        return <ProductList products={products} onDecrement={onDecrement} onIncrement={onIncrement} onReset={onReset}/>;
+        return <ProductList key="products" products={products} onDecrement={onDecrement} onIncrement={onIncrement} onReset={onReset}/>;
     }
 }
 

@@ -10,7 +10,7 @@ class Skills extends Component {
         return (
             <div className="skills-container">
                 <h1>SOLID Principles</h1>
-                {SOLID.map((item) => (<AccordionItem data={item}/>))}
+                {SOLID.map((item) => (<AccordionItem key={item.title} data={item}/>))}
             </div>
         );
     }
