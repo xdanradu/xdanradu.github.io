@@ -21,7 +21,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build-and-deploy": "react-scripts build && deploy.bat",
+    "build": "react-scripts build",
+    "build-and-deploy": "react-scripts build && node replace.build.js && deploy.bat",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "prismjs": "^1.21.0",
+    "replace-in-file": "^6.1.0",
     "vanilla-tilt": "^1.7.0"
   }
 }
