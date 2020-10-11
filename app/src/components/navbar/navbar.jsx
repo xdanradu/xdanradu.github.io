@@ -107,8 +107,9 @@ class NavBar extends Component {
         <NavLink to="/shop" activeclassname="active" onClick={(e) => this.toggle(e)}>
           Shop
         </NavLink>
+
         <div className="badge-pill">
-          <Checkout counters={counters} onDecrement={onDecrement} onIncrement={onIncrement} onReset={onReset}/>
+          <Checkout key="checkout" counters={counters} onDecrement={onDecrement} onIncrement={onIncrement} onReset={onReset}/>
         </div>
 
 

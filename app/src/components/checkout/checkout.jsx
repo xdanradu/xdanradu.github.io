@@ -20,11 +20,17 @@ function ProductList(props) {
         <div>Selected products:</div>
         {
             products.filter((c) => c.value > 0).map((product) => (
-            <div>
+            <div key={product.id}>
                 <h4>Product id: {product.id} Quantity: {product.value}
-                    <button className="action-btn" onClick={() => onIncrement(product)}><SmallIcon icon={PlusIcon}/></button>
-                    <button className="action-btn" onClick={() => onDecrement(product)}><SmallIcon icon={MinusIcon}/></button>
-                    <button className="action-btn" onClick={() => onReset(product)}><SmallIcon icon={RemoveIcon}/></button>
+                    <button className="action-btn" onClick={() => onIncrement(product)}>
+                        <SmallIcon key="plus-icon" icon={PlusIcon}/>
+                    </button>
+                    <button className="action-btn" onClick={() => onDecrement(product)}>
+                        <SmallIcon key="minus-icon" icon={MinusIcon}/>
+                    </button>
+                    <button className="action-btn" onClick={() => onReset(product)}>
+                        <SmallIcon key="remove-icon" icon={RemoveIcon}/>
+                    </button>
                 </h4>
             </div>
             ))
