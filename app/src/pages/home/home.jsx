@@ -6,7 +6,7 @@ import LazyLoad from 'react-lazyload';
 function MyImage() {
     return <div className="image">
                 <LazyLoad once>
-                    <img src={require("../../resources/images/dan.jpg")} />
+                    <img alt="Profile" src={require("../../resources/images/dan.jpg")} />
                 </LazyLoad>
            </div>;
 }
@@ -38,10 +38,10 @@ class Home extends Component {
 
                         </p>
                     <div className="tech-container">
-                    <div className="tech-logo"><img className="tech-logo-img" src={require("../../resources/images/javascript.png")} /></div>
-                    <div className="tech-logo"><img className="tech-logo-img" src={require("../../resources/images/angular.png")} /></div>
-                    <div className="tech-logo"><img className="tech-logo-img" src={require("../../resources/images/spring-boot.png")} /></div>
-                    <div className="tech-logo"><img className="tech-logo-img" src={require("../../resources/images/git.png")} /></div>
+                    <div className="tech-logo"><img alt="JavaScript" className="tech-logo-img" src={require("../../resources/images/javascript.png")} /></div>
+                    <div className="tech-logo"><img alt="Angular" className="tech-logo-img" src={require("../../resources/images/angular.png")} /></div>
+                    <div className="tech-logo"><img alt="Spring boot" className="tech-logo-img" src={require("../../resources/images/spring-boot.png")} /></div>
+                    <div className="tech-logo"><img alt="Git" className="tech-logo-img" src={require("../../resources/images/git.png")} /></div>
                     </div>
                     {/*<p>I am a lecturer at the <b>Technical University of Cluj-Napoca</b> since 2012 when I defended my PhD thesis called
                         "<b>Efficient Routing Strategies for Mobile Ad Hoc Networks</b>". </p>*/}

@@ -46,13 +46,13 @@ function Products(props){
 
 class Checkout extends Component {
     render() {
-        let {counters, onDecrement, onDelete, onIncrement, onReset} = this.props;
+        let {counters, onDecrement, onIncrement, onReset} = this.props;
         return (
             <Popup
                 trigger={
                     <div>
                         <div className="shopping-cart-icon"><ShoppingCart /></div>
-                        <button className={`button ${counters.filter((c) => c.value > 0).length==0?'empty':'not-empty'}`}> {counters.filter((c) => c.value > 0).length} </button>
+                        <button className={`button ${counters.filter((c) => c.value > 0).length===0?'empty':'not-empty'}`}> {counters.filter((c) => c.value > 0).length} </button>
                     </div>}
                 modal
                 nested
@@ -65,7 +65,7 @@ class Checkout extends Component {
                         <div className="header"> Checkout </div>
                         <div className="content">
 
-                            <Products isEmpty={counters.filter((c) => c.value > 0)==0} products={counters}
+                            <Products isEmpty={counters.filter((c) => c.value > 0)===0} products={counters}
                                       onDecrement={onDecrement} onIncrement={onIncrement}  onReset={onReset}/>
 
                         </div>

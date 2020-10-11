@@ -23,7 +23,7 @@ class Card extends Component {
                         <h2>{position}</h2>
                         <h3>{title}</h3>
                         <p>{description}</p>
-                        <a class="noselect" onClick={() => onIncrement(counter)}>Add to cart</a>
+                        <button className="noselect" onClick={() => onIncrement(counter)}>Add to cart</button>
 
                     </div>
                 </div>

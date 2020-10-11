@@ -35,9 +35,14 @@ class NavBar extends Component {
 
   componentDidMount() {
     let prevScrollpos = window.pageYOffset;
+
+    document.addEventListener('swiped-down', function(e) {
+      console.log(e.target); // the element that was swiped
+    });
+
     window.onscroll = function() {
       let currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
+      if (prevScrollpos > currentScrollPos+1) {
         document.getElementById("myTopnav").style.top = "0";
       } else {
         document.getElementById("myTopnav").style.top = "-70px";
@@ -45,13 +50,11 @@ class NavBar extends Component {
       prevScrollpos = currentScrollPos;
 
 
-
       if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
         document.getElementById("bottom-menu").style.bottom = "0px";
       } else {
         document.getElementById("bottom-menu").style.bottom = "-30px";
       }
-
 
     }
   }
@@ -90,7 +93,7 @@ class NavBar extends Component {
     let { counters, onDecrement, onIncrement, onReset } = this.props;
     return <nav>
       <div className="topnav" id="myTopnav">
-        <div class="topnav-logo">
+        <div className="topnav-logo">
           <Logo/>
         </div>
 
