@@ -35,14 +35,11 @@ class NavBar extends Component {
 
   componentDidMount() {
     let prevScrollpos = window.pageYOffset;
-
-    document.addEventListener('swiped-down', function(e) {
-      console.log(e.target); // the element that was swiped
-    });
+    prevScrollpos = 20;
 
     window.onscroll = function() {
       let currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos+1) {
+      if (prevScrollpos > currentScrollPos) {
         document.getElementById("myTopnav").style.top = "0";
       } else {
         document.getElementById("myTopnav").style.top = "-70px";
