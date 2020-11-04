@@ -7,16 +7,11 @@ class Shop extends Component {
         let {counters, onIncrement} = this.props;
         return (
             <div className="card-container">
-                <Card position="02" title="JavaScript" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua." counter={counters[0]} onIncrement={onIncrement}/>
-                <Card position="01" title="Angular" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua." counter={counters[1]} onIncrement={onIncrement}/>
-                <Card position="03" title="Java" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua." counter={counters[2]} onIncrement={onIncrement}/>
-                <Card position="04" title="C#" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua." counter={counters[3]} onIncrement={onIncrement}/>
-                <Card position="05" title="SQL" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua." counter={counters[4]} onIncrement={onIncrement}/>
+                <Card position="01" title="JavaScript" description="Angular, React, jQuery, NodeJS" counter={counters[0]} onIncrement={onIncrement}/>
+                <Card position="02" title="HTML/CSS" description="Responsive UI" counter={counters[1]} onIncrement={onIncrement}/>
+                <Card position="03" title="Java" description="Spring boot, JWT, Hibernate, Flyway" counter={counters[2]} onIncrement={onIncrement}/>
+                <Card position="04" title="C#" description="WCF, Rest API, 3 Tier Architecture" counter={counters[3]} onIncrement={onIncrement}/>
+                <Card position="05" title="SQL" description="PosgreSQL, SQL Server, MySQL, Stored Procedures, Triggers" counter={counters[4]} onIncrement={onIncrement}/>
             </div>
         );
     }

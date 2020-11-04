@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./checkout.scss";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import {ShoppingCart} from "../icons/shopping-cart";
+import {ShoppingCartIcon} from "../icons/shopping-cart-icon";
 import {RemoveIcon} from "../icons/remove-icon";
 import {SmallIcon} from "../icons/small-icon";
 import {PlusIcon} from "../icons/plus-icon";
@@ -18,23 +18,37 @@ function ProductList(props) {
     return (
         <div className={"center"}>
         <div>Selected products:</div>
+            <div className="grid-container">
         {
             products.filter((c) => c.value > 0).map((product) => (
             <div key={product.id}>
-                <h4>Product id: {product.id} Quantity: {product.value}
-                    <button className="action-btn" onClick={() => onIncrement(product)}>
-                        <SmallIcon key="plus-icon" icon={PlusIcon}/>
-                    </button>
-                    <button className="action-btn" onClick={() => onDecrement(product)}>
-                        <SmallIcon key="minus-icon" icon={MinusIcon}/>
-                    </button>
-                    <button className="action-btn" onClick={() => onReset(product)}>
-                        <SmallIcon key="remove-icon" icon={RemoveIcon}/>
-                    </button>
-                </h4>
-            </div>
+                <div className="checkout-products-list">
+
+
+                        <div className="grid-item">
+                            <div className="checkout-product-name">{product.name} ({product.value})</div>
+                        </div>
+                        <div className="grid-item">
+                            <div className="checkout-buttons">
+                                <button className="action-btn" onClick={() => onIncrement(product)}>
+                                    <SmallIcon key="plus-icon" icon={PlusIcon}/>
+                                </button>
+                                <button className="action-btn" onClick={() => onDecrement(product)}>
+                                    <SmallIcon key="minus-icon" icon={MinusIcon}/>
+                                </button>
+                                <button className="action-btn" onClick={() => onReset(product)}>
+                                    <SmallIcon key="remove-icon" icon={RemoveIcon}/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
             ))
-        }
+        }</div>
             <div>Total: {products.filter((c) => c.value > 0).reduce((acc,c)=>acc+c.value,0)}</div>
         </div>
     );
@@ -57,7 +71,7 @@ class Checkout extends Component {
             <Popup
                 trigger={
                     <div>
-                        <div className="shopping-cart-icon"><ShoppingCart /></div>
+                        <div className="shopping-cart-icon"><ShoppingCartIcon /></div>
                         <button className={`button ${counters.filter((c) => c.value > 0).length===0?'empty':'not-empty'}`}> {counters.filter((c) => c.value > 0).length} </button>
                     </div>}
                 modal
@@ -72,7 +86,7 @@ class Checkout extends Component {
                         <div className="content">
 
                             <Products isEmpty={counters.filter((c) => c.value > 0)===0} products={counters}
-                                      onDecrement={onDecrement} onIncrement={onIncrement}  onReset={onReset}/>
+                                      onDecrement={onDecrement} onIncrement={onIncrement} onReset={onReset}/>
 
                         </div>
                         <div className="actions">

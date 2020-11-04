@@ -104,6 +104,7 @@
 }
 
 
+
 @media screen and (max-width: 600px) {
   .button {
     top: 5px;
@@ -116,5 +117,36 @@
     width:90% !important;
   }
 }
+
+.checkout-products-list {
+  display: flex;
+
+  .checkout-product-name {
+    display: inline-block;
+    font-size: 18px;
+    width:200px;
+    padding-top:12px;
+    text-align:right;
+  }
+  .checkout-buttons{
+
+  }
+
+}
+
+.grid-container {
+  width:100%;
+  display: grid;
+  grid-template-columns: 100%;
+
+  grid-gap: 5px;
+  place-items: center;
+}
+.grid-item {
+  min-width:200px;
+  padding: 10px;
+  text-align: center;
+}
+
 
 
