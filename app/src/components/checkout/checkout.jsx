@@ -17,7 +17,6 @@ function ProductList(props) {
 
     return (
         <div className={"center"}>
-        <div>Selected products:</div>
             <div className="grid-container">
         {
             products.filter((c) => c.value > 0).map((product) => (
@@ -56,7 +55,9 @@ function ProductList(props) {
 }
 
 function Products(props){
-    const {isEmpty, products, onDecrement, onIncrement, onReset} = props;
+    const {products, onDecrement, onIncrement, onReset} = props;
+    let isEmpty = products.filter((c) => c.value > 0).length===0;
+
     if(isEmpty) {
         return <EmptyCheckout/>;
     } else {
@@ -85,7 +86,7 @@ class Checkout extends Component {
                         <div className="header"> Checkout </div>
                         <div className="content">
 
-                            <Products isEmpty={counters.filter((c) => c.value > 0)===0} products={counters}
+                            <Products products={counters}
                                       onDecrement={onDecrement} onIncrement={onIncrement} onReset={onReset}/>
 
                         </div>
