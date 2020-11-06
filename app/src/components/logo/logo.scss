@@ -1,98 +1,96 @@
-@import "../../index";
+@import '../../index';
 
 .site-logo-container {
   width: 100px;
   height: 48px;
   overflow: hidden;
-  float:left;
+  float: left;
 }
 
 .site-title {
-  float:left;
+  float: left;
   display: inline-block;
-  background: url("assets/logo-large-green.svg") no-repeat center center;
+  background: url('assets/logo-large-green.svg') no-repeat center center;
   background-size: contain;
   width: 90px;
   height: 30px;
   text-indent: -9999px;
-  padding:0;
+  padding: 0;
   animation-duration: 0.5s;
   animation-name: headerIcon_c-o_lg;
-  margin-top:12px;
-  margin-left:6px;
+  margin-top: 12px;
+  margin-left: 6px;
 }
 
 @keyframes headerIcon_o-c_sm {
   0% {
-    margin-top:12px;
-    margin-left:6px;
-    width:30px;
-    height:30px;
+    margin-top: 12px;
+    margin-left: 6px;
+    width: 30px;
+    height: 30px;
   }
   50% {
-    margin-top:6px;
-    margin-left:2px;
-    width:40px;
-    height:40px;
+    margin-top: 6px;
+    margin-left: 2px;
+    width: 40px;
+    height: 40px;
   }
   100% {
-    margin-top:12px;
-    margin-left:6px;
-    width:30px;
-    height:30px;
+    margin-top: 12px;
+    margin-left: 6px;
+    width: 30px;
+    height: 30px;
   }
 }
 
 @keyframes headerIcon_o-c_md {
   0% {
-    margin-top:12px;
-    margin-left:6px;
-    width:60px;
-    height:30px;
+    margin-top: 12px;
+    margin-left: 6px;
+    width: 60px;
+    height: 30px;
   }
   50% {
-    margin-top:6px;
-    margin-left:2px;
-    width:70px;
-    height:40px;
+    margin-top: 6px;
+    margin-left: 2px;
+    width: 70px;
+    height: 40px;
   }
   100% {
-    margin-top:12px;
-    margin-left:6px;
-    width:60px;
-    height:30px;
+    margin-top: 12px;
+    margin-left: 6px;
+    width: 60px;
+    height: 30px;
   }
 }
 
 @keyframes headerIcon_c-o_lg {
   0% {
-    margin-top:12px;
-    margin-left:6px;
-    width:90px;
-    height:30px;
+    margin-top: 12px;
+    margin-left: 6px;
+    width: 90px;
+    height: 30px;
   }
   50% {
-    margin-top:6px;
-    margin-left:2px;
-    width:100px;
-    height:40px;
+    margin-top: 6px;
+    margin-left: 2px;
+    width: 100px;
+    height: 40px;
   }
   100% {
-    margin-top:12px;
-    margin-left:6px;
-    width:90px;
-    height:30px;
+    margin-top: 12px;
+    margin-left: 6px;
+    width: 90px;
+    height: 30px;
   }
 }
 
-
 @media only screen and (max-width: 600px) {
   .site-title {
-    background-image: url("assets/logo-small-green.svg");
+    background-image: url('assets/logo-small-green.svg');
     width: 30px;
     animation-name: headerIcon_o-c_sm;
     animation-duration: 0.5s;
-
   }
   .site-logo-container {
     width: 40px;
@@ -101,7 +99,7 @@
 
 @media (min-width: 601px) and (max-width: 1100px) {
   .site-title {
-    background-image: url("assets/logo-medium-green.svg");
+    background-image: url('assets/logo-medium-green.svg');
     width: 60px;
     animation-name: headerIcon_o-c_md;
     animation-duration: 0.5s;

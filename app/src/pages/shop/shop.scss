@@ -1,7 +1,7 @@
-@import "src/index";
+@import 'src/index';
 
 .card-container {
-  width:100%;
+  width: 100%;
 
   display: inline-flex;
   flex-direction: row;
@@ -9,4 +9,3 @@
   overflow: hidden;
   justify-content: center;
 }
-

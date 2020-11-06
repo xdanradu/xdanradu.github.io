@@ -1,22 +1,19 @@
-@import "../../index";
+@import '../../index';
 
 .modal {
   font-size: 12px;
   background-color: var(--primary-color);
 
-  padding:10px
+  padding: 10px;
 }
 .modal > .header {
-  width: 100%;
-
   font-size: 14px;
   text-align: center;
-  padding:15px;
+  padding: 15px;
   font-size: 16px;
 }
 .modal > .content {
   width: 100%;
-  padding: 10px 5px;
 }
 .modal > .actions {
   width: 100%;
@@ -32,7 +29,7 @@
   right: 2px;
   top: 2px;
   font-size: 24px;
-  background:  var(--primary-color);
+  background: var(--primary-color);
   color: var(--secondary-color-light);
   border: 0px solid #cfcece;
   outline: none;
@@ -43,27 +40,26 @@
 }
 
 .popup-content {
-  padding:0px !important;
+  padding: 0px !important;
   border: 1px solid var(--first-accent-color-darker) !important;
-  width:50% !important;
+  width: 50% !important;
 }
 
 .button {
   color: var(--secondary-color-darker);
   border-radius: 50%;
-  padding:3px;
-  width:20px;
-  height:20px;
+  padding: 3px;
+  width: 20px;
+  height: 20px;
   border: 0px;
   border-radius: 50%;
   position: absolute;
-  top:5px;
-  right:5px;
-
+  top: 5px;
+  right: 5px;
 
   &.empty {
     background-color: var(--secondary-color-lighter);
-    display:none;
+    display: none;
   }
 
   &.not-empty {
@@ -75,35 +71,23 @@
   }
 
   &:focus {
-    outline:0;
+    outline: 0;
   }
-
 }
 
-.action-btn {
-  margin:5px;
-  outline: none;
-}
-
-.center {
-  text-align: center;
-}
-
-.shopping-cart-icon{
-  z-index:2;
+.shopping-cart-icon {
+  z-index: 2;
   font-size: 30px;
-  height:30px;
-  width:30px;
-  margin-right:5px;
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
 }
 
-.shopping-cart-icon:hover{
-  z-index:2;
+.shopping-cart-icon:hover {
+  z-index: 2;
   font-size: 30px;
-  cursor:pointer;
+  cursor: pointer;
 }
-
-
 
 @media screen and (max-width: 600px) {
   .button {
@@ -114,39 +98,6 @@
 
 @media screen and (max-width: 1000px) {
   .popup-content {
-    width:90% !important;
+    width: 90% !important;
   }
 }
-
-.checkout-products-list {
-  display: flex;
-
-  .checkout-product-name {
-    display: inline-block;
-    font-size: 18px;
-    width:200px;
-    padding-top:12px;
-    text-align:right;
-  }
-  .checkout-buttons{
-
-  }
-
-}
-
-.grid-container {
-  width:100%;
-  display: grid;
-  grid-template-columns: 100%;
-
-  grid-gap: 5px;
-  place-items: center;
-}
-.grid-item {
-  min-width:200px;
-  padding: 10px;
-  text-align: center;
-}
-
-
-

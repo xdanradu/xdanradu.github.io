@@ -10,6 +10,7 @@
     "immer": "^7.0.5",
     "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
+    "prettier": "^2.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-lazyload": "^3.0.0",
@@ -22,9 +23,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-and-deploy": "react-scripts build && node replace.build.js && deploy.bat",
+    "build-push-deploy": "react-scripts build && node replace.build.js && deploy.bat",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --config ./.prettierrc --list-different \"src/**/*{.jsx,.ts,.js,.json,.scss,.html}\" --write"
   },
   "eslintConfig": {
     "extends": "react-app"

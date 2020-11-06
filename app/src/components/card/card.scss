@@ -1,10 +1,10 @@
-@import "../../index";
+@import '../../index';
 
 .card {
-  flex:1 0 300px;
+  flex: 1 0 300px;
   position: relative;
   width: 300px;
-  max-width:300px;
+  max-width: 300px;
   height: 300px;
   background: var(--secondary-color-dark);
   display: flex;
@@ -26,7 +26,7 @@
   bottom: 2px;
   left: 2px;
   width: 50%;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   pointer-events: none;
 }
 
@@ -130,7 +130,11 @@
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(to bottom, transparent, var(--first-accent-color));
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--first-accent-color)
+  );
   animation: animate2 2s linear infinite;
   animation-delay: 1s;
 }
@@ -186,24 +190,21 @@
 @media screen and (max-width: 600px) {
   .card {
     margin: 15px 0px 0px;
-    max-width:100%;
+    max-width: 100%;
   }
-
 }
 
-
-.counter-badge{
+.counter-badge {
   position: absolute;
-  bottom:10px;
-  left:10px;
+  bottom: 10px;
+  left: 10px;
   text-align: center;
   vertical-align: center;
-  width:20px;
-  height:20px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: var(--first-accent-color);
   color: var(--primary-color);
-
 }
 
 .noselect {
