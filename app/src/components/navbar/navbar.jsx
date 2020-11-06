@@ -15,8 +15,8 @@ const darkTheme = {
   firstAccentColor: '#7dba5c',
   firstAccentColorDark: '#539149',
   secondAccentColor: '#ffca28',
-  tableOdd: '#ff000055',
-  tableEven: '#00ff0055'
+  tableOdd: '#111',
+  tableEven: '#222'
 };
 
 const lightTheme = {
