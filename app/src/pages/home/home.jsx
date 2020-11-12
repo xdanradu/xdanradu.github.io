@@ -4,6 +4,7 @@ import VanillaTilt from 'vanilla-tilt';
 import LazyLoad from 'react-lazyload';
 import { LinkedinIcon } from '../../components/icons/linkedin-icon';
 import { GithubIcon } from '../../components/icons/github-icon';
+import PetriGraph from "../../components/teaching/petri-graph/petri-graph";
 
 function MyImage() {
   return (
@@ -77,6 +78,9 @@ class Home extends Component {
             </div>
           </div>
         </div>
+
+        <PetriGraph />
+
       </div>
     );
   }
