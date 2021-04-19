@@ -10,7 +10,7 @@ class Shop extends Component {
         <Card
           position="01"
           title="JavaScript"
-          description="Angular, React, jQuery, NodeJS"
+          description="Angular, React, VueJS, NodeJS"
           counter={counters[0]}
           onIncrement={onIncrement}
         />
