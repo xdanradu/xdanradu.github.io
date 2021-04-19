@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.0.1",
   "scripts": {
-    "start": "live-server --port=4200"
+    "start": "live-server --port=4203"
   },
   "dependencies": {
     "live-server": "^1.2.1"

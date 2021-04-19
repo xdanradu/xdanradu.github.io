@@ -31,7 +31,7 @@ class Home extends Component {
     return (
       <div className="home-container">
         <div className="container">
-          <MyImage />
+          {/*<MyImage />*/}
           <div className="description">
             <p className="my-description">
               My name is <b>Dan Radu</b>, I'm a{' '}
@@ -79,7 +79,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <PetriGraph />
+        {/* <PetriGraph />*/}
       </div>
     );
   }
