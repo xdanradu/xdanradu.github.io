@@ -34,18 +34,16 @@ class Home extends Component {
           {/*<MyImage />*/}
           <div className="description">
             <p className="my-description">
-              My name is <b>Dan Radu</b>, I'm a{' '}
-              <b>fullstack Software Developer</b> based in Cluj-Napoca, Romania.
-            </p>
-            <p>
+              My name is Dan Radu, I'm a{' '}
+              Fullstack Software Developer based in Cluj-Napoca, Romania.
               I have over 12 years of programming experience and previously
               worked with a wide range of software technologies and
               architectures, both on desktop and web applications. I've been
               programming on the web with:{' '}
-              <b>
+
                 JavaScript, Angular, ReactJS, CSS, HTML, REST API's, Java
                 (Spring boot, Hibernate, Flyway/Liquibase), C#, PHP, SQL, Git.
-              </b>
+
               {/*I also have experience with the Agile process and understand the benefits of using the CI/CD (Jenkins, Docker, AWS) pipeline.*/}
             </p>
             {/*<div className="tech-container">
