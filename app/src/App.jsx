@@ -1,5 +1,4 @@
 import React, { Component, lazy, Suspense } from 'react';
-import Skills from './pages/skills/skills';
 import './App.css';
 import { connect } from 'react-redux';
 import {
@@ -11,7 +10,7 @@ import {
   cleared
 } from './redux-store/actions';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Shop from './pages/shop/shop';
+import Shop from './pages/showcase/shop';
 
 const NavBar = lazy(() => import('./components/navbar/navbar'));
 const Home = lazy(() => import('./pages/home/home'));
@@ -36,9 +35,6 @@ class App extends Component {
               <Suspense fallback={<div>Loading... </div>}>
                 <Home />
               </Suspense>
-            </Route>
-            <Route exact path="/skills">
-              <Skills />
             </Route>
             <Route exact path="/shop">
               <Shop

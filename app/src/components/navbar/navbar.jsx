@@ -5,6 +5,8 @@ import Checkout from '../checkout/checkout';
 import Logo from '../../components/logo/logo';
 import { SmallIcon } from '../icons/small-icon';
 import { BarsIcon } from '../icons/bars-icon';
+import { LinkedinIcon } from '../icons/linkedin-icon';
+import { GithubIcon } from '../icons/github-icon';
 
 const darkTheme = {
   primaryColor: '#222',
@@ -20,8 +22,8 @@ const darkTheme = {
 };
 
 const lightTheme = {
-  primaryColor: '#efefef',
-  secondaryColorDarker: '#ddd',
+  primaryColor: '#fff',
+  secondaryColorDarker: '#FAFAFA',
   secondaryColorDark: '#eeeeee',
   secondaryColorLight: '#111111',
   secondaryColorLighter: '#282828',
@@ -134,18 +136,11 @@ class NavBar extends Component {
             Home
           </NavLink>
           <NavLink
-            to="/skills"
-            activeclassname="active"
-            onClick={e => this.toggle(e)}
-          >
-            Skills
-          </NavLink>
-          <NavLink
             to="/shop"
             activeclassname="active"
             onClick={e => this.toggle(e)}
           >
-            Shop
+            Showcase
           </NavLink>
 
           <div className="badge-pill">
@@ -161,6 +156,7 @@ class NavBar extends Component {
 
           <a id="breadcrumb" onClick={e => this.toggle(e)} className="icon">
             <SmallIcon icon={BarsIcon} />
+            <div>x</div>
           </a>
 
           <div className="theme">
@@ -178,6 +174,28 @@ class NavBar extends Component {
             >
               {' '}
             </button>
+          </div>
+
+          <div className="description">
+            <div className="social-icons">
+              <div
+                onClick={() =>
+                  window.open(
+                    'https://www.linkedin.com/in/dan-radu-74a80563/',
+                    '_blank'
+                  )
+                }
+              >
+                <LinkedinIcon />
+              </div>
+              <div
+                onClick={() =>
+                  window.open('https://github.com/xdanradu', '_blank')
+                }
+              >
+                <GithubIcon />
+              </div>
+            </div>
           </div>
         </div>
       </nav>
