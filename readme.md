@@ -17,6 +17,6 @@ css
 img
 introduction
 test
-training (this is the temporary build folder, where the docusaurus build is generated, all the files are
+docs-dist (this is the temporary build folder, where the docusaurus build is generated, all the files are
 then copied to the root folder manually)
 ```
