@@ -28,12 +28,12 @@ module.exports = {
         },
         {
           label: 'Try on StackBlitz',
-          href: 'https://stackblitz.com/github/ng-mocks/examples?file=src/test.spec.ts',
+          href: 'https://stackblitz.com',
           position: 'left',
         },
         {
           label: 'Try on CodeSandbox',
-          href: 'https://codesandbox.io/s/github/ng-mocks/examples?file=/src/test.spec.ts',
+          href: 'https://codesandbox.io',
           position: 'left',
         },
         {
@@ -61,10 +61,6 @@ module.exports = {
             {
               label: 'Documentation',
               to: '/',
-            },
-            {
-              label: 'Test examples',
-              to: '/guides',
             },
             {
               label: 'Try on StackBlitz',
