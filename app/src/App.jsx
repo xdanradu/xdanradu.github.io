@@ -48,7 +48,7 @@ class App extends Component {
             </Route>
           </Switch>
         </div>
-        <div id="bottom-menu">&copy; 2021</div>
+        <div id="bottom-menu">&copy; 2022</div>
       </Router>
     );
   }
