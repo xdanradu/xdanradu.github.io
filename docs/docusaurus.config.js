@@ -9,8 +9,8 @@ module.exports = {
   onDuplicateRoutes: 'throw',
   baseUrlIssueBanner: false,
   favicon: 'img/favicon.ico',
-  organizationName: 'ike18t',
-  projectName: 'ng-mocks',
+  organizationName: 'xdanradu',
+  projectName: 'frontend-training',
   themeConfig: {
     hideableSidebar: true,
     announcementBar: {
@@ -101,12 +101,6 @@ module.exports = {
         remarkPlugins: [[require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
       },
     ],
-    '@docusaurus/plugin-sitemap',
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-EBEPX2CVNW',
-      },
-    ],
-  ],
+
+  ]
 };

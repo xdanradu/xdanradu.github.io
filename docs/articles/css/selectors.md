@@ -4,7 +4,19 @@ description: Information about CSS selectors
 sidebar_label: Selectors
 ---
 
-**A mock component in Angular tests** can be created by `MockComponent` function.
-The mock component respects the interface of its original component,
-but all its methods are dummies.
+**CSS selectors specificity** types:
 
+```html
+	<div class="blue" style="color:red !important">...
+<!--
+	.blue {
+		color:blue !important;
+	}	
+
+	- can be changed only from JS
+	- id vs class
+	-->
+```
+
+
+pseudo classes, combinators
