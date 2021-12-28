@@ -15,3 +15,5 @@ css files
 ```
 
 ## Replace in all files the doc paths with /training/introduction/training/css etc
+"/introduction/
+"/training/introduction/
