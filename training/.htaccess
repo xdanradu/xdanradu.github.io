@@ -1,9 +1,9 @@
-<IfModule mod_rewrite.c>
+ <IfModule mod_rewrite.c>
     DirectorySlash Off
     SetHandler some-handler
 
     RewriteEngine On
-    RewriteBase /
+    RewriteBase /training
     RewriteOptions AllowNoSlash
 
     RewriteCond %{HTTP:CF-Visitor} '{"scheme":"http"}'
