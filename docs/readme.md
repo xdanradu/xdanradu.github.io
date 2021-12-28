@@ -13,3 +13,5 @@ assets/
 css files
 ./assets
 ```
+
+## Replace in all files the doc paths with /training/introduction/training/css etc
