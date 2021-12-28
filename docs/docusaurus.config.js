@@ -22,11 +22,6 @@ module.exports = {
       title: 'frontend-training-2022',
       items: [
         {
-          to: '/guides',
-          label: 'Test examples',
-          position: 'left',
-        },
-        {
           label: 'Try on StackBlitz',
           href: 'https://stackblitz.com',
           position: 'left',
@@ -35,10 +30,6 @@ module.exports = {
           label: 'Try on CodeSandbox',
           href: 'https://codesandbox.io',
           position: 'left',
-        },
-        {
-          label: 'Run tests on CI',
-          href: 'https://satantime.github.io/puppeteer-node/',
         },
         {
           href: 'https://github.com/xdanradu/xdanradu.github.io',
@@ -106,7 +97,7 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
-        editUrl: 'https://github.com/xdanradu/xdanradu.github.io/tree/master/training/docs/',
+        editUrl: 'https://github.com/xdanradu/xdanradu.github.io/tree/master/docs/',
         remarkPlugins: [[require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
       },
     ],
