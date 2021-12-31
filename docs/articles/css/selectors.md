@@ -20,3 +20,9 @@ sidebar_label: Selectors
 
 
 pseudo classes, combinators
+
+## Pseudo classes
+`:nth-of-type`
+
+https://www.w3.org/TR/selectors/
+https://css-tricks.com/almanac/selectors/n/nth-of-type/

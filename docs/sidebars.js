@@ -14,6 +14,7 @@ module.exports = {
         'css/animations',
         'css/flexbox-grid',
         'css/positioning',
+        'css/display',
         'css/responsive-design',
         'css/coding-standards'
       ],

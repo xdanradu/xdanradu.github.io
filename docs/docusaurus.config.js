@@ -37,7 +37,7 @@ module.exports = {
           position: 'right',
         },
         {
-          href: 'https://www.npmjs.com/package/@xdanradu/utils',
+          href: 'https://www.npmjs.com/package/add-snow',
           label: 'NPM package',
           position: 'right',
         },
@@ -72,7 +72,7 @@ module.exports = {
             },
             {
               label: 'NPM package',
-              href: 'https://www.npmjs.com/package/@xdanradu/utils',
+              href: 'https://www.npmjs.com/package/add-snow',
             },
           ],
         },
