@@ -1,4 +1,3 @@
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Allow: /
-
-Sitemap: https://ng-mocks.sudo.eu/sitemap.xml
+Disallow:
