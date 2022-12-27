@@ -21,7 +21,7 @@ export function ProductList(props) {
             <div className="product" key={product.id}>
               <div className="checkout-products-row">
                 <div className="grid-item checkout-product-name">
-                  {product.name} ({product.value})
+                  {product.title} ({product.value})
                 </div>
                 <div className="grid-item checkout-buttons">
                   <button
