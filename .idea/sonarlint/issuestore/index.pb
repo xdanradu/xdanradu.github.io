@@ -9,8 +9,6 @@ B
 app/src/index.scss,4\3\43bb26c942e47a034bca511bc71512417f566f01
 ?
 app/src/App.css,8\c\8c0a6d39a5d2779070c05b56be10d80c834508b0
-K
-app/src/pages/home/home.jsx,7\0\70022a1401b32f6bdc8099e90b447a30e0f81f5f
 ?
 app/src/App.jsx,1\a\1a8f13e47a360fa43822f0eba390b8c5d6d8c622
 Y
