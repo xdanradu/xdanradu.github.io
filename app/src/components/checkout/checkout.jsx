@@ -3,74 +3,55 @@ import './checkout.scss';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { ShoppingCartIcon } from '../icons/shopping-cart-icon';
-import { Products } from './products';
+import {observer} from "mobx-react-lite";
+import {ProductList} from "./product-list";
 
-class Checkout extends Component {
-  render() {
-    let { counters, onDecrement, onIncrement, onReset, onCleared } = this.props;
-    return (
-      <Popup
+const Checkout = observer(({ store }) => (
+    <Popup
         trigger={
-          <div>
-            <div className="shopping-cart-icon">
-              <ShoppingCartIcon />
+            <div>
+                <div className="shopping-cart-icon">
+                    <ShoppingCartIcon />
+                </div>
             </div>
-            <button
-              className={`button ${
-                counters.filter(c => c.value > 0).length === 0
-                  ? 'empty'
-                  : 'not-empty'
-              }`}
-            >
-              {' '}
-              {counters.filter(c => c.value > 0).length}{' '}
-            </button>
-          </div>
         }
         modal
         nested
-      >
+    >
         {close => (
-          <div className="modal">
-            <button className="close" onClick={close}>
-              &times;
-            </button>
-            {/*<div className="header"> Checkout </div>*/}
-            <div className="content">
-              <Products
-                products={counters}
-                onDecrement={onDecrement}
-                onIncrement={onIncrement}
-                onReset={onReset}
-                onCleared={onCleared}
-              />
-            </div>
-            <div className="actions">
-              <button
-                className="action-btn"
-                onClick={() => {
-                  console.log('modal closed ');
-                  close();
-                }}
-              >
-                Cancel
-              </button>
+            <div className="modal">
+                <button className="close" onClick={close}>
+                    &times;
+                </button>
+                <div className="content">
+                    <ProductList
+                        store={store}
+                    />
+                </div>
+                <div className="actions">
+                    <button
+                        className="action-btn"
+                        onClick={() => {
+                            console.log('modal closed ');
+                            close();
+                        }}
+                    >
+                        Cancel
+                    </button>
 
-              <button
-                className="action-btn"
-                onClick={() => {
-                  console.log('modal closed ');
-                  close();
-                }}
-              >
-                Checkout
-              </button>
+                    <button
+                        className="action-btn"
+                        onClick={() => {
+                            console.log('modal closed ');
+                            close();
+                        }}
+                    >
+                        Checkout
+                    </button>
+                </div>
             </div>
-          </div>
         )}
-      </Popup>
-    );
-  }
-}
+    </Popup>
+));
 
 export default Checkout;

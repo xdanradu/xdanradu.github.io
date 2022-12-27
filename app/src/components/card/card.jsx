@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './card.scss';
+import {observer} from "mobx-react-lite";
 
 function Badge(props) {
   let { value } = props;
@@ -7,28 +8,25 @@ function Badge(props) {
   return '';
 }
 
-class Card extends Component {
-  render() {
-    let { position, title, description, counter, onIncrement } = this.props;
-    return (
-      <div className="card">
+const ProductCard = observer(({ product }) => (
+
+    <div className="card">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         <div className="content">
-          <Badge value={counter.value} />
+            <Badge value={product.quantity} />
 
-          <h2>0{position}</h2>
-          <h3>{title}</h3>
-          <p>{description}</p>
-          <button className="noselect" onClick={() => onIncrement(counter)}>
-            Add to cart
-          </button>
+            <h2>0{product.id}</h2>
+            <h3>{product.title}</h3>
+            <p>{product.description}</p>
+            <button className="noselect" onClick={() => product.inc()}>
+                Add to cart
+            </button>
         </div>
-      </div>
-    );
-  }
-}
+    </div>
+))
 
-export default Card;
+
+export default ProductCard;

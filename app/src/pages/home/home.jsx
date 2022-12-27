@@ -1,20 +1,9 @@
 import React, { Component } from 'react';
 import './home.scss';
 import VanillaTilt from 'vanilla-tilt';
-import LazyLoad from 'react-lazyload';
 import '../../resources/styles/prism.css';
 import SOLID from '../../data/solid';
 import AccordionItem from '../../components/accordion-item/accordion-item';
-
-function MyImage() {
-  return (
-    <div className="image">
-      <LazyLoad once>
-        <img alt="Profile" src={require('../../resources/images/dan.jpg')} />
-      </LazyLoad>
-    </div>
-  );
-}
 
 class Home extends Component {
   componentDidMount = function () {
@@ -38,7 +27,6 @@ class Home extends Component {
             ))}
           </div>
         </div>
-        {/* <PetriGraph />*/}
       </div>
     );
   }
