@@ -19,7 +19,7 @@ class Card extends Component {
         <div className="content">
           <Badge value={counter.value} />
 
-          <h2>{position}</h2>
+          <h2>0{position}</h2>
           <h3>{title}</h3>
           <p>{description}</p>
           <button className="noselect" onClick={() => onIncrement(counter)}>

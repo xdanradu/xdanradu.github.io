@@ -7,36 +7,9 @@ import { SmallIcon } from '../icons/small-icon';
 import { BarsIcon } from '../icons/bars-icon';
 import { LinkedinIcon } from '../icons/linkedin-icon';
 import { GithubIcon } from '../icons/github-icon';
-
-const darkTheme = {
-  primaryColor: '#222',
-  secondaryColorDarker: '#111',
-  secondaryColorDark: '#222',
-  secondaryColorLight: '#818181',
-  secondaryColorLighter: '#ccc',
-  firstAccentColor: '#7dba5c',
-  firstAccentColorDark: '#539149',
-  secondAccentColor: '#ffca28',
-  tableOdd: '#111',
-  tableEven: '#222'
-};
-
-const lightTheme = {
-  primaryColor: '#fff',
-  secondaryColorDarker: '#FAFAFA',
-  secondaryColorDark: '#eeeeee',
-  secondaryColorLight: '#111111',
-  secondaryColorLighter: '#282828',
-  firstAccentColor: '#bb0000',
-  firstAccentColorDark: '#bb0000',
-  secondAccentColor: '#1292d5',
-  tableOdd: '#ddd',
-  tableEven: '#efefef'
-};
+import Theme from "../theme/theme";
 
 class NavBar extends Component {
-  // const NavBar = ({ counters, onDecrement, onIncrement, onReset }) => {
-
   componentDidMount() {
     let prevScrollpos = window.pageYOffset;
     prevScrollpos = 20;
@@ -59,57 +32,9 @@ class NavBar extends Component {
         document.getElementById('bottom-menu').style.bottom = '-30px';
       }
     };
-    this.setTheme('light');
-  }
-
-  setTheme(option) {
-    let theme = darkTheme;
-    if (option === 'light') {
-      theme = lightTheme;
-      document.getElementById('dark-theme').className = 'btn btn-dark';
-      document.getElementById('light-theme').className = 'btn btn-light active';
-    } else {
-      document.getElementById('dark-theme').className = 'btn btn-dark active';
-      document.getElementById('light-theme').className = 'btn btn-light';
-    }
-    document.documentElement.style.setProperty(
-      '--primary-color',
-      theme.primaryColor
-    );
-    document.documentElement.style.setProperty(
-      '--secondary-color-darker',
-      theme.secondaryColorDarker
-    );
-    document.documentElement.style.setProperty(
-      '--secondary-color-dark',
-      theme.secondaryColorDark
-    );
-    document.documentElement.style.setProperty(
-      '--secondary-color-light',
-      theme.secondaryColorLight
-    );
-    document.documentElement.style.setProperty(
-      '--secondary-color-lighter',
-      theme.secondaryColorLighter
-    );
-    document.documentElement.style.setProperty(
-      '--first-accent-color',
-      theme.firstAccentColor
-    );
-    document.documentElement.style.setProperty(
-      '--first-accent-color-dark',
-      theme.firstAccentColorDark
-    );
-    document.documentElement.style.setProperty(
-      '--second-accent-color',
-      theme.secondAccentColor
-    );
-    document.documentElement.style.setProperty('--table-odd', theme.tableOdd);
-    document.documentElement.style.setProperty('--table-even', theme.tableEven);
   }
 
   toggle(e) {
-    //e.preventDefault();
     var topnav = document.getElementById('myTopnav');
     if (topnav.className === 'topnav') {
       topnav.className += ' responsive';
@@ -140,7 +65,7 @@ class NavBar extends Component {
             activeclassname="active"
             onClick={e => this.toggle(e)}
           >
-            Showcase
+            Hire me
           </NavLink>
 
           <div className="badge-pill">
@@ -159,22 +84,7 @@ class NavBar extends Component {
             <div>x</div>
           </a>
 
-          <div className="theme">
-            <button
-              id="dark-theme"
-              className="btn btn-dark active"
-              onClick={() => this.setTheme('dark')}
-            >
-              {' '}
-            </button>
-            <button
-              id="light-theme"
-              className="btn btn-light"
-              onClick={() => this.setTheme('light')}
-            >
-              {' '}
-            </button>
-          </div>
+          <Theme />
 
           <div className="description">
             <div className="social-icons">
