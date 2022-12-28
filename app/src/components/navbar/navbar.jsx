@@ -3,23 +3,23 @@ import './navbar.scss';
 import { NavLink } from 'react-router-dom';
 import Checkout from '../checkout/checkout';
 import Logo from '../../components/logo/logo';
-import { SmallIcon } from '../icons/small-icon';
-import { BarsIcon } from '../icons/bars-icon';
 import { LinkedinIcon } from '../icons/linkedin-icon';
 import { GithubIcon } from '../icons/github-icon';
 import Theme from "../theme/theme";
 import {observer} from "mobx-react-lite";
+import loadStore from "../../mobx-store/StoreService";
+const store = loadStore();
 
 function toggle(e) {
-  var topnav = document.getElementById('myTopnav');
-  if (topnav.className === 'topnav') {
-    topnav.className += ' responsive';
+  let topNav = document.getElementById('myTopnav');
+  if (topNav.className === 'topnav') {
+    topNav.className += ' responsive';
   } else {
-    topnav.className = 'topnav';
+    topNav.className = 'topnav';
   }
 }
 
-const NavBar = observer(({ store }) => (
+const NavBar = observer(() => (
     <nav>
       <div className="topnav" id="myTopnav">
         <div className="topnav-logo">

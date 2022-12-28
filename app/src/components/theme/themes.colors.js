@@ -4,12 +4,12 @@ export const darkTheme = {
     secondaryColorDark: '#222',
     secondaryColorLight: '#818181',
     secondaryColorLighter: '#ccc',
-    firstAccentColor: '#7dba5c',
+    firstAccentColor: '#489aff',
     firstAccentColorDark: '#539149',
     secondAccentColor: '#ffca28',
     tableOdd: '#111',
     tableEven: '#222',
-    successColor: '#3feb24'
+    successColor: '#489aff'
 };
 
 export const lightTheme = {

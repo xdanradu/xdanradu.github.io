@@ -2,18 +2,18 @@ import React, { Component, lazy, Suspense } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Shop from './pages/showcase/shop';
-import {Store} from "./mobx-store/Store";
+import loadStore from "./mobx-store/StoreService";
 
-const store = new Store()
 const NavBar = lazy(() => import('./components/navbar/navbar'));
 const Home = lazy(() => import('./pages/home/home'));
+const store = loadStore();
 
 class App extends Component {
   render() {
     return (
       <Router>
         <Suspense fallback={<div>Loading... </div>}>
-          <NavBar store = {store} />
+          <NavBar />
         </Suspense>
 
         <div className="page-layout">
