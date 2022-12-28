@@ -13,6 +13,16 @@ const Checkout = observer(({ store }) => (
                 <div className="shopping-cart-icon">
                     <ShoppingCartIcon />
                 </div>
+                <button
+                    className={`button ${
+                        store.distinctLength === 0
+                            ? 'empty'
+                            : 'not-empty'
+                    }`}
+                >
+                    {' '}
+                    {store.distinctLength}{' '}
+                </button>
             </div>
         }
         modal
