@@ -1,0 +1,45 @@
+@import '../../index';
+
+.modal {
+  font-size: 12px;
+  background-color: var(--primary-color);
+  padding: 10px;
+}
+.modal > .header {
+  font-size: 14px;
+  text-align: center;
+  padding: 15px;
+  font-size: 16px;
+}
+.modal > .content {
+  width: 100%;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  right: 2px;
+  top: 2px;
+  font-size: 24px;
+  background: var(--primary-color);
+  color: var(--secondary-color-light);
+  border: 0px solid #cfcece;
+  outline: none;
+
+  &:hover {
+    color: var(--first-accent-color);
+  }
+}
+
+.popup-content {
+  padding: 0px !important;
+  border: 1px solid var(--first-accent-color-darker) !important;
+  width: 50% !important;
+}

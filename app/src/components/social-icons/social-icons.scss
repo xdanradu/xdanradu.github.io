@@ -1,0 +1,60 @@
+@import '../../index';
+
+.description {
+  vertical-align: middle;
+  float: right;
+  margin-left: 18px;
+
+  font-family: oswald, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+
+  text-align: center;
+
+  p {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .tech-container {
+    width: 100%;
+    text-align: center;
+  }
+  .tech-logo {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin: 0 18px 0;
+  }
+
+  .tech-logo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .tech-logo img:hover {
+    cursor: pointer;
+  }
+
+  .social-icons {
+    padding-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    div {
+      width: 20px;
+      margin: 10px;
+      font-size: 20px;
+    }
+
+    div:hover {
+      cursor: pointer;
+      color: var(--first-accent-color);
+    }
+  }
+}

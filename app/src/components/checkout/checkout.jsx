@@ -1,67 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './checkout.scss';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import { ShoppingCartIcon } from '../icons/shopping-cart-icon';
-import {observer} from "mobx-react-lite";
-import {ProductList} from "./product-list";
+import { observer } from 'mobx-react-lite';
+import { CartButton } from './cart-button';
+import { CartBody } from './cart-body';
 
 const Checkout = observer(({ store }) => (
-    <Popup
-        trigger={
-            <div>
-                <div className="shopping-cart-icon">
-                    <ShoppingCartIcon />
-                </div>
-                <button
-                    className={`button ${
-                        store.distinctLength === 0
-                            ? 'empty'
-                            : 'not-empty'
-                    }`}
-                >
-                    {' '}
-                    {store.distinctLength}{' '}
-                </button>
-            </div>
-        }
-        modal
-        nested
-    >
-        {close => (
-            <div className="modal">
-                <button className="close" onClick={close}>
-                    &times;
-                </button>
-                <div className="content">
-                    <ProductList
-                        store={store}
-                    />
-                </div>
-                <div className="actions">
-                    <button
-                        className="action-btn"
-                        onClick={() => {
-                            console.log('modal closed ');
-                            close();
-                        }}
-                    >
-                        Cancel
-                    </button>
-
-                    <button
-                        className="action-btn"
-                        onClick={() => {
-                            console.log('modal closed ');
-                            close();
-                        }}
-                    >
-                        Checkout
-                    </button>
-                </div>
-            </div>
-        )}
-    </Popup>
+  <Popup
+    trigger={
+      <div>
+        <CartButton store={store} />
+      </div>
+    }
+    modal
+    nested
+  >
+    {close => <CartBody store={store} close={close} />}
+  </Popup>
 ));
 
 export default Checkout;

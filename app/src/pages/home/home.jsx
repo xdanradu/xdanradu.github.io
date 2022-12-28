@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './home.scss';
 import VanillaTilt from 'vanilla-tilt';
 import '../../resources/styles/prism.css';
-import SOLID from '../../data/solid';
+import SOLID from '../../json-data/solid';
 import AccordionItem from '../../components/accordion-item/accordion-item';
 
 class Home extends Component {

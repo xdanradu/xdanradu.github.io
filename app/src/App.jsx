@@ -2,7 +2,7 @@ import React, { Component, lazy, Suspense } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Shop from './pages/showcase/shop';
-import loadStore from "./mobx-store/StoreService";
+import loadStore from './mobx-store/StoreService';
 
 const NavBar = lazy(() => import('./components/navbar/navbar'));
 const Home = lazy(() => import('./pages/home/home'));
@@ -24,7 +24,7 @@ class App extends Component {
               </Suspense>
             </Route>
             <Route exact path="/shop">
-              <Shop store={store}/>
+              <Shop store={store} />
             </Route>
           </Switch>
         </div>
@@ -33,8 +33,5 @@ class App extends Component {
     );
   }
 }
-
-
-
 
 export default App;
