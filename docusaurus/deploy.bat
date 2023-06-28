@@ -6,7 +6,7 @@ set_date.bat
 echo %CURRENT_DATE%
 del *.* /Q
 rmdir "static" /S /Q
-cd app
+cd docusaurus
 xcopy /s build %PARENT_FOLDER% /Q
 echo "COMMIT all changes and PUSH them to github repo"
 cd ..
