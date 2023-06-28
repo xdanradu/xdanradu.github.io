@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './about.scss';
-import Card from '../../components/card/card';
 import Counters from '../../components/counters/counters';
-import { Route } from 'react-router-dom';
 
 class About extends Component {
   render() {

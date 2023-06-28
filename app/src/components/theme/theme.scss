@@ -1,0 +1,41 @@
+@import '../../index';
+
+.theme {
+  float: left;
+  margin-left: 18px;
+  margin-top: 12px;
+
+  button:focus {
+    outline: 0;
+  }
+  .btn {
+    padding: 3px;
+    vertical-align: center;
+    text-align: center;
+    width: 19px;
+    height: 19px;
+    border: 0px;
+    margin-right: 5px;
+    &.btn-dark {
+      background-color: #222;
+      border-bottom: 3px solid #222;
+    }
+    &.btn-dark:hover {
+      background-color: #444;
+      border-bottom: 3px solid #777;
+    }
+    &.btn-light {
+      background-color: #eee;
+      border-bottom: 3px solid #eee;
+    }
+    &.btn-light:hover {
+      background-color: #ccc;
+    }
+    &.active {
+      border-bottom: 3px solid var(--first-accent-color);
+    }
+  }
+  .btn:hover {
+    cursor: pointer;
+  }
+}

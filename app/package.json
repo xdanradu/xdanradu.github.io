@@ -2,6 +2,14 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build-push-deploy": "react-scripts build && node replace.build.js && deploy.bat",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prettier": "prettier --config ./.prettierrc --list-different \"src/**/*{.jsx,.ts,.js,.json,.scss,.html}\" --write"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -20,14 +28,6 @@
     "react-scripts": "3.4.1",
     "reactjs-popup": "^2.0.4",
     "redux": "^4.0.5"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build-push-deploy": "react-scripts build && node replace.build.js && deploy.bat",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prettier": "prettier --config ./.prettierrc --list-different \"src/**/*{.jsx,.ts,.js,.json,.scss,.html}\" --write"
   },
   "eslintConfig": {
     "extends": "react-app"

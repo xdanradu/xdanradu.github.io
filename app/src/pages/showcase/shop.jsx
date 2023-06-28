@@ -7,41 +7,15 @@ class Shop extends Component {
     let { counters, onIncrement } = this.props;
     return (
       <div className="card-container">
-        <Card
-          position="01"
-          title="JavaScript"
-          description="Angular, React, VueJS, NodeJS"
-          counter={counters[0]}
-          onIncrement={onIncrement}
-        />
-        <Card
-          position="02"
-          title="HTML/CSS"
-          description="UI/UX"
-          counter={counters[1]}
-          onIncrement={onIncrement}
-        />
-        <Card
-          position="03"
-          title="Java"
-          description="Spring boot, JWT, Hibernate, Flyway"
-          counter={counters[2]}
-          onIncrement={onIncrement}
-        />
-        <Card
-          position="04"
-          title="C#"
-          description="Rest API's, 3 Tier Architecture"
-          counter={counters[3]}
-          onIncrement={onIncrement}
-        />
-        <Card
-          position="05"
-          title="SQL"
-          description="PosgreSQL, SQL Server, MySQL"
-          counter={counters[4]}
-          onIncrement={onIncrement}
-        />
+        {counters.map(item => (
+          <Card
+            position={item.id}
+            title={item.title}
+            description={item.description}
+            counter={item}
+            onIncrement={onIncrement}
+          />
+        ))}
       </div>
     );
   }
