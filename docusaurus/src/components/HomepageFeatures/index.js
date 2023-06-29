@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'IT Consultant',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
@@ -14,17 +14,18 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Lecturer',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Data transmission, client server architecture, CRUD, REST, SOLID,
+          http, websockets, <code>Angular</code>, <code>VueJS</code>,
+          <code>ExpressJS</code>, <code>GPS</code>.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Trainer',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
