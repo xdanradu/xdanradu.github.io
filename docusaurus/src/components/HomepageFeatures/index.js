@@ -28,7 +28,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Current trends and technologies in Frontend development - one day
+        Frontend development (JS, HTML, CSS) - one day
           training held for Frequentis Romania, 2022
       </>
     ),
