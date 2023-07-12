@@ -97,19 +97,15 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'Blog',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'RxJS',
+                href: '/blog/tags/rxjs',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Programming essentials',
+                href: '/blog/tags/essentials',
               },
             ],
           },
@@ -117,8 +113,8 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Linkedin',
+                href: 'https://www.linkedin.com/in/dan-radu-74a80563',
               },
               {
                 label: 'GitHub',
