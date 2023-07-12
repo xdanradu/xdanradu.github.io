@@ -8,8 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        10+ years in Software Development, CI/CD, Backend, Frontend, SQL
       </>
     ),
   },
@@ -29,8 +28,8 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Current trends and technologies in Frontend development - one day
+          training held for Frequentis Romania, 2022
       </>
     ),
   },
