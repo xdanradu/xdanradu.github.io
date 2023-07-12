@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        10+ years in Software Development, CI/CD, Backend, Frontend, SQL
+        10+ years experience as a Team Lead/Frelancer in Software Development, CI/CD, Backend, Frontend, SQL.
       </>
     ),
   },
