@@ -28,8 +28,11 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Frontend development (JS, HTML, CSS) - one day
-          training held for Frequentis Romania, 2022
+        Frontend development state of the art - one day
+          training held for Frequentis Romania, 2022. Topics:
+          web components, web assemblies, CSS, HTML and JS
+          essential features, architecture challenges, performance
+          optimizations.
       </>
     ),
   },
