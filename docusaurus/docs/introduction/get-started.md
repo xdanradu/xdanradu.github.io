@@ -2,6 +2,7 @@
 title: Frontend training
 description: Frontend training
 sidebar_label: Get started
+sidebar_position: 1
 slug: /
 ---
 
@@ -13,7 +14,7 @@ slug: /
  -->
 
 
-## JavaScript intro for people without programming background
+## WebDev for beginners
 - Essential and clean code snippets
 - Programming essential steps 
     - how to install node, java

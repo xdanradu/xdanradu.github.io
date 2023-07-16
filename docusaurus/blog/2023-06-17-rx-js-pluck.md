@@ -7,7 +7,7 @@ tags: [rxjs, essentials, pluck]
 ---
 
 
-```js
+```typescript
 import { from } from 'rxjs';
 import { pluck } from 'rxjs/operators';
 

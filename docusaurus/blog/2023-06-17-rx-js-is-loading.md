@@ -8,7 +8,7 @@ tags: [rxjs, essentials, is-loading-flag]
 
 Ways to implement the isLoading flag
 
-```js
+```typescript
 export interface HttpRequestState<T> {
   isLoading: boolean;
   value?: T;
@@ -62,11 +62,11 @@ export class SomeLayoutComponent {
 <!-- Smart component template -->
 <some-layout-component
   [state]="myDataState$ | async"
-></some-layout-component>```
+></some-layout-component>
 ```
 
 # Or separated observables
-```js
+```typescript
 export class SomeComponent {
   constructor(
     private readonly activatedRoute: ActivatedRoute,
