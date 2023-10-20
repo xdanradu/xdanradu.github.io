@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8421],{4515:s=>{s.exports=JSON.parse('{"label":"sap-composable-storefront","permalink":"/blog/tags/sap-composable-storefront","allTagsPath":"/blog/tags","count":1}')}}]);
