@@ -6,7 +6,7 @@ authors: dradu
 tags: [rxjs, essentials, is-loading-flag]
 ---
 
-Ways to implement the isLoading flag
+How to implement the isLoading flag:
 
 ```typescript
 export interface HttpRequestState<T> {
