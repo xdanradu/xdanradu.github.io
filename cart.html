@@ -667,7 +667,8 @@
       // Close cart popup when clicking outside
       document.addEventListener('click', function(e) {
         if (!cartPopup.contains(e.target) && e.target !== cartButton) {
-          cartPopup.classList.remove('active');
+          // close the popup when clicking outside, the next line doesn't work as expected
+          // cartPopup.classList.remove('active');
         }
       });
     });
