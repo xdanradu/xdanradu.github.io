@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Shopping Cart</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      min-height: 100vh;
+    }
+    
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #000;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .cart-button {
+      position: relative;
+      background-color: transparent;
+      color: #fff;
+      font-size: 18px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .cart-button:hover {
+      opacity: 0.8;
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #fff;
+      color: #000;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    /* Cart Popup Styles */
+    .cart-popup {
+      position: absolute;
+      top: 65px;
+      right: 20px;
+      width: 350px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+    
+    .cart-popup.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .cart-header {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .cart-header h3 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .close-cart {
+      background-color: transparent;
+      font-size: 20px;
+      color: #777;
+    }
+    
+    .cart-items {
+      max-height: 350px;
+      overflow-y: auto;
+      padding: 15px;
+    }
+    
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .item-image {
+      width: 60px;
+      height: 60px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #777;
+    }
+    
+    .item-details {
+      flex: 1;
+    }
+    
+    .item-name {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    
+    .item-price {
+      color: #777;
+      font-size: 14px;
+    }
+    
+    .item-quantity {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+    }
+    
+    .quantity-btn {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+    
+    .quantity-input {
+      width: 35px;
+      height: 24px;
+      text-align: center;
+      margin: 0 5px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+    
+    .remove-item {
+      background-color: transparent;
+      color: #999;
+      font-size: 16px;
+    }
+    
+    .cart-footer {
+      padding: 15px;
+      border-top: 1px solid #eee;
+    }
+    
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .cart-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .checkout-btn {
+      flex: 1;
+      padding: 10px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .checkout-btn:hover {
+      opacity: 0.9;
+    }
+    
+    .email-cart-btn {
+      flex: 1;
+      padding: 10px;
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .email-cart-btn:hover {
+      background-color: #f9f9f9;
+    }
+    
+    .empty-cart {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+    
+    /* Product Grid Styles */
+    .products-heading {
+      margin: 30px 0 20px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .product-card {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .product-image {
+      height: 200px;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #777;
+    }
+    
+    .product-info {
+      padding: 15px;
+    }
+    
+    .product-name {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .product-price {
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    
+    .add-to-cart {
+      width: 100%;
+      padding: 10px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .add-to-cart:hover {
+      opacity: 0.9;
+    }
+    
+    /* Email Form Styles */
+    .email-form {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .email-form.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .email-form-content {
+      width: 90%;
+      max-width: 400px;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    
+    .email-form-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .close-form {
+      background-color: transparent;
+      font-size: 20px;
+      color: #777;
+    }
+    
+    .email-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    .send-email-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #000;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 4px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+    
+    .toast.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">SHOP</div>
+    <button class="cart-button" id="cartButton">
+      <span>Cart</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <div class="cart-popup" id="cartPopup">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart" id="closeCart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be added here -->
+      <div class="empty-cart" id="emptyCart">Your cart is empty</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <div class="cart-actions">
+        <button class="checkout-btn">Checkout</button>
+        <button class="email-cart-btn" id="emailCartBtn">Email Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="products-heading">Featured Products</h2>
+    <div class="products-grid" id="productsGrid">
+      <!-- Product cards will be generated here -->
+    </div>
+  </div>
+
+  <div class="email-form" id="emailForm">
+    <div class="email-form-content">
+      <div class="email-form-header">
+        <h3>Send Cart to Email</h3>
+        <button class="close-form" id="closeEmailForm">×</button>
+      </div>
+      <input type="email" class="email-input" id="emailInput" placeholder="Enter your email">
+      <button class="send-email-btn" id="sendEmailBtn">Send</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Sample product data
+    const products = [
+      { id: 1, name: "Classic T-Shirt", price: 19.99, image: "T-Shirt" },
+      { id: 2, name: "Denim Jeans", price: 49.99, image: "Jeans" },
+      { id: 3, name: "Casual Sneakers", price: 79.99, image: "Sneakers" },
+      { id: 4, name: "Leather Watch", price: 129.99, image: "Watch" },
+      { id: 5, name: "Backpack", price: 59.99, image: "Backpack" },
+      { id: 6, name: "Sunglasses", price: 29.99, image: "Sunglasses" }
+    ];
+
+    // Cart state
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // DOM elements
+    const cartButton = document.getElementById('cartButton');
+    const cartPopup = document.getElementById('cartPopup');
+    const closeCart = document.getElementById('closeCart');
+    const cartItems = document.getElementById('cartItems');
+    const emptyCart = document.getElementById('emptyCart');
+    const cartCount = document.getElementById('cartCount');
+    const cartTotal = document.getElementById('cartTotal');
+    const productsGrid = document.getElementById('productsGrid');
+    const emailCartBtn = document.getElementById('emailCartBtn');
+    const emailForm = document.getElementById('emailForm');
+    const closeEmailForm = document.getElementById('closeEmailForm');
+    const emailInput = document.getElementById('emailInput');
+    const sendEmailBtn = document.getElementById('sendEmailBtn');
+    const toast = document.getElementById('toast');
+
+    // Initialize products grid
+    function initProductsGrid() {
+      productsGrid.innerHTML = '';
+      products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.innerHTML = `
+          <div class="product-image">${product.image}</div>
+          <div class="product-info">
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-price">$${product.price.toFixed(2)}</p>
+            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+          </div>
+        `;
+        productsGrid.appendChild(productCard);
+      });
+
+      // Add event listeners to 'Add to Cart' buttons
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+          const productId = parseInt(button.getAttribute('data-id'));
+          addToCart(productId);
+        });
+      });
+    }
+
+    // Initialize cart display
+    function updateCartDisplay() {
+      // Update cart count
+      cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+
+      // Update cart items display
+      if (cart.length === 0) {
+        emptyCart.style.display = 'block';
+        cartItems.innerHTML = '<div class="empty-cart">Your cart is empty</div>';
+      } else {
+        emptyCart.style.display = 'none';
+        cartItems.innerHTML = '';
+        cart.forEach((item, index) => {
+          const cartItemElement = document.createElement('div');
+          cartItemElement.className = 'cart-item';
+          cartItemElement.innerHTML = `
+            <div class="item-image">${item.image}</div>
+            <div class="item-details">
+              <div class="item-name">${item.name}</div>
+              <div class="item-price">$${item.price.toFixed(2)}</div>
+              <div class="item-quantity">
+                <button class="quantity-btn decrease" data-index="${index}">-</button>
+                <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-index="${index}">
+                <button class="quantity-btn increase" data-index="${index}">+</button>
+              </div>
+            </div>
+            <button class="remove-item" data-index="${index}">×</button>
+          `;
+          cartItems.appendChild(cartItemElement);
+        });
+
+        // Add event listeners for quantity controls and remove buttons
+        document.querySelectorAll('.decrease').forEach(button => {
+          button.addEventListener('click', () => {
+            const index = parseInt(button.getAttribute('data-index'));
+            if (cart[index].quantity > 1) {
+              cart[index].quantity--;
+              updateCart();
+            }
+          });
+        });
+
+        document.querySelectorAll('.increase').forEach(button => {
+          button.addEventListener('click', () => {
+            const index = parseInt(button.getAttribute('data-index'));
+            cart[index].quantity++;
+            updateCart();
+          });
+        });
+
+        document.querySelectorAll('.quantity-input').forEach(input => {
+          input.addEventListener('change', () => {
+            const index = parseInt(input.getAttribute('data-index'));
+            const newQuantity = parseInt(input.value);
+            if (newQuantity >= 1) {
+              cart[index].quantity = newQuantity;
+              updateCart();
+            } else {
+              input.value = cart[index].quantity;
+            }
+          });
+        });
+
+        document.querySelectorAll('.remove-item').forEach(button => {
+          button.addEventListener('click', () => {
+            const index = parseInt(button.getAttribute('data-index'));
+            removeFromCart(index);
+          });
+        });
+      }
+
+      // Update cart total
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      cartTotal.textContent = `$${total.toFixed(2)}`;
+
+      // Save cart to localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Add product to cart
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      
+      if (!product) return;
+      
+      const existingItemIndex = cart.findIndex(item => item.id === productId);
+      
+      if (existingItemIndex > -1) {
+        cart[existingItemIndex].quantity++;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+          quantity: 1
+        });
+      }
+      
+      updateCart();
+      showToast(`${product.name} added to cart`);
+      
+      // Show cart popup when adding item
+      cartPopup.classList.add('active');
+    }
+
+    // Remove product from cart
+    function removeFromCart(index) {
+      const itemName = cart[index].name;
+      cart.splice(index, 1);
+      updateCart();
+      showToast(`${itemName} removed from cart`);
+    }
+
+    // Update cart state and display
+    function updateCart() {
+      updateCartDisplay();
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Show toast notification
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('active');
+      
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 3000);
+    }
+
+    // Event Listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set up cart button click handler
+      cartButton.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event from bubbling up
+        cartPopup.classList.toggle('active');
+      });
+
+      closeCart.addEventListener('click', function() {
+        cartPopup.classList.remove('active');
+      });
+
+      emailCartBtn.addEventListener('click', function() {
+        emailForm.classList.add('active');
+      });
+
+      closeEmailForm.addEventListener('click', function() {
+        emailForm.classList.remove('active');
+      });
+
+      sendEmailBtn.addEventListener('click', function() {
+        const email = emailInput.value.trim();
+        
+        if (!email) {
+          showToast('Please enter a valid email address');
+          return;
+        }
+        
+        // In a real-world scenario, this would send an actual email
+        // For this demo, we'll just simulate it
+        emailForm.classList.remove('active');
+        showToast(`Cart details sent to ${email}`);
+      });
+
+      // Close cart popup when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!cartPopup.contains(e.target) && e.target !== cartButton) {
+          cartPopup.classList.remove('active');
+        }
+      });
+    });
+
+    // Initialize the page
+    initProductsGrid();
+    updateCartDisplay();
+  </script>
+</body>
+</html>
