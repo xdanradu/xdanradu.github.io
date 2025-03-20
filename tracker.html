@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Value Tracker</title>
+  <style>
+    :root {
+      --primary-blue: #2563eb;
+      --light-blue: #93c5fd;
+      --lighter-blue: #dbeafe;
+      --white: #ffffff;
+      --gray-200: #e5e7eb;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--white);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    header {
+      background-color: var(--primary-blue);
+      color: var(--white);
+      padding: 1rem 0;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    
+    .input-section {
+      background-color: var(--lighter-blue);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .input-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    input {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid var(--light-blue);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    
+    button {
+      background-color: var(--primary-blue);
+      color: var(--white);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    
+    .chart-section {
+      background-color: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      height: 400px;
+    }
+    
+    .no-data {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: #9ca3af;
+      text-align: center;
+    }
+    
+    .data-table {
+      margin-top: 2rem;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .data-table th, .data-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .data-table th {
+      background-color: var(--lighter-blue);
+      font-weight: 500;
+    }
+    
+    .data-table tr:hover {
+      background-color: var(--lighter-blue);
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Number Value Tracker</h1>
+  </header>
+  
+  <div class="container">
+    <div class="input-section">
+      <div class="input-group">
+        <input type="number" id="numberInput" placeholder="Enter a number value">
+        <button id="saveButton">Save Value</button>
+      </div>
+      <p id="message"></p>
+    </div>
+    
+    <div class="chart-section">
+      <canvas id="dataChart"></canvas>
+      <div id="noDataMessage" class="no-data">
+        <p>No data points yet. Enter a number to start tracking!</p>
+      </div>
+    </div>
+    
+    <table class="data-table" id="dataTable">
+      <thead>
+        <tr>
+          <th>Date & Time</th>
+          <th>Value</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="dataTableBody">
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </div>
+  
+  <script>
+    // DOM elements
+    const numberInput = document.getElementById('numberInput');
+    const saveButton = document.getElementById('saveButton');
+    const messageElement = document.getElementById('message');
+    const noDataMessage = document.getElementById('noDataMessage');
+    const dataTableBody = document.getElementById('dataTableBody');
+    
+    // Chart setup
+    const ctx = document.getElementById('dataChart').getContext('2d');
+    let dataChart;
+    
+    // Local storage key
+    const STORAGE_KEY = 'numberTrackerData';
+    
+    // Load data from local storage
+    function loadData() {
+      try {
+        const storedData = localStorage.getItem(STORAGE_KEY);
+        return storedData ? JSON.parse(storedData) : [];
+      } catch (error) {
+        console.error('Error loading data:', error);
+        return [];
+      }
+    }
+    
+    // Save data to local storage
+    function saveData(data) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } catch (error) {
+        console.error('Error saving data:', error);
+        showMessage('Error saving data. Local storage might be full or disabled.', 'error');
+      }
+    }
+    
+    // Format date for display
+    function formatDate(timestamp) {
+      const date = new Date(timestamp);
+      return date.toLocaleString();
+    }
+    
+    // Show message to user
+    function showMessage(text, type = 'success') {
+      messageElement.textContent = text;
+      messageElement.style.color = type === 'error' ? '#ef4444' : '#10b981';
+      
+      // Clear message after 3 seconds
+      setTimeout(() => {
+        messageElement.textContent = '';
+      }, 3000);
+    }
+    
+    // Update chart with data
+    function updateChart(data) {
+      if (data.length === 0) {
+        noDataMessage.style.display = 'flex';
+        document.getElementById('dataChart').style.display = 'none';
+        return;
+      }
+      
+      noDataMessage.style.display = 'none';
+      document.getElementById('dataChart').style.display = 'block';
+      
+      // Prepare data for chart
+      const labels = data.map(item => new Date(item.timestamp).toLocaleString());
+      const values = data.map(item => item.value);
+      
+      // Initialize or update chart
+      if (dataChart) {
+        dataChart.data.labels = labels;
+        dataChart.data.datasets[0].data = values;
+        dataChart.update();
+      } else {
+        dataChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Number Values',
+              data: values,
+              backgroundColor: 'rgba(37, 99, 235, 0.2)',
+              borderColor: 'rgba(37, 99, 235, 1)',
+              borderWidth: 2,
+              pointBackgroundColor: 'rgba(37, 99, 235, 1)',
+              pointRadius: 4,
+              tension: 0.1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: false
+              }
+            },
+            plugins: {
+              legend: {
+                display: true,
+                position: 'top'
+              }
+            }
+          }
+        });
+      }
+    }
+    
+    // Update table with data
+    function updateTable(data) {
+      dataTableBody.innerHTML = '';
+      
+      data.forEach((item, index) => {
+        const row = document.createElement('tr');
+        
+        const dateCell = document.createElement('td');
+        dateCell.textContent = formatDate(item.timestamp);
+        
+        const valueCell = document.createElement('td');
+        valueCell.textContent = item.value;
+        
+        const actionsCell = document.createElement('td');
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.style.backgroundColor = '#ef4444';
+        deleteButton.style.padding = '0.25rem 0.5rem';
+        deleteButton.style.fontSize = '0.875rem';
+        
+        deleteButton.onclick = () => {
+          deleteDataPoint(index);
+        };
+        
+        actionsCell.appendChild(deleteButton);
+        
+        row.appendChild(dateCell);
+        row.appendChild(valueCell);
+        row.appendChild(actionsCell);
+        
+        dataTableBody.appendChild(row);
+      });
+    }
+    
+    // Delete a data point
+    function deleteDataPoint(index) {
+      const data = loadData();
+      data.splice(index, 1);
+      saveData(data);
+      updateChart(data);
+      updateTable(data);
+      showMessage('Data point deleted');
+    }
+    
+    // Add new data point
+    function addDataPoint() {
+      const value = parseFloat(numberInput.value);
+      
+      if (isNaN(value)) {
+        showMessage('Please enter a valid number', 'error');
+        return;
+      }
+      
+      const newDataPoint = {
+        value: value,
+        timestamp: new Date().toISOString()
+      };
+      
+      const data = loadData();
+      data.push(newDataPoint);
+      saveData(data);
+      
+      // Update UI
+      updateChart(data);
+      updateTable(data);
+      
+      // Clear input and show success message
+      numberInput.value = '';
+      showMessage('Value saved successfully!');
+    }
+    
+    // Event listeners
+    saveButton.addEventListener('click', addDataPoint);
+    numberInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        addDataPoint();
+      }
+    });
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const data = loadData();
+      updateChart(data);
+      updateTable(data);
+    });
+  </script>
+</body>
+</html>
